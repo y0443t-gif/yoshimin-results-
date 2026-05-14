@@ -696,35 +696,58 @@
 </div>
 
 <script>
-// =================== ダミーデータ ===================
-let data = [
-  {
-    id:1, name:"Aさん", age:"50代前半", job:"パート主婦", height:158,
-    course:"3months", continued:false,
-    stats:{ weight:{b:63.5,a:58.2}, bodyfat:{b:38.5,a:33.2}, waist:{b:86,a:79}, under:{b:78,a:73} },
-    photos:{ before:null, after:null, afterCont:null },
-    outfits:[],
-    qa:[
-      {q:"受ける前はどんなお悩みがありましたか？", a:"何度もダイエットに挑戦してはリバウンドを繰り返していました。50代に入って代謝が落ちた感じがして、もう痩せられないと諦めかけていました。"},
-      {q:"一番変わったことは何ですか？", a:"食べながら痩せられるって本当なんだ！と実感できたことです。お米を食べてもいいと言われたとき半信半疑でしたが、体が変わっていくのを感じました。"},
-      {q:"続けられた秘訣を教えてください", a:"よっちゃんがいつも「大丈夫だよ」と背中を押してくれたこと。完璧じゃなくていい、70点でいい、という考え方が私には合っていました。"},
-      {q:"どんな方におすすめしたいですか？", a:"何度もリバウンドを繰り返してきた方、食べることが好きで食べないダイエットに限界を感じている方にぜひ体験してほしいです！"}
-    ]
-  },
-  {
-    id:2, name:"Bさん", age:"40代後半", job:"会社員", height:162,
-    course:"continued", continued:true,
-    stats:{ weight:{b:68.0,a:61.5}, bodyfat:{b:40.2,a:34.8}, waist:{b:90,a:80}, under:{b:82,a:76} },
-    photos:{ before:null, after:null, afterCont:null },
-    outfits:[],
-    qa:[
-      {q:"受ける前はどんな状態でしたか？", a:"更年期の影響もあって体重が増え続けていました。運動しても食事制限しても全然変わらず、もうこれが私の体質だと思っていました。"},
-      {q:"継続しようと思ったきっかけは？", a:"3ヶ月講座を終えた時点でまだまだ変われる可能性を感じたから。よっちゃんともう少し一緒に頑張りたいと思いました。"},
-      {q:"継続して良かったことは？", a:"ダイエットが習慣になりました。「今日は食べすぎた」と思っても焦らなくなったし、自分の体のクセが分かるようになりました。"},
-      {q:"今後の目標を教えてください", a:"体重より体型！好きな洋服を着こなせる体を目指します。よっちゃんに撮ってもらった洋服写真が宝物です😊"}
-    ]
+// =================== 設定 ===================
+const GAS_URL = 'https://script.google.com/macros/s/AKfycbziLBebr9bhQFHV8Z874Iy5ERdeDglTC8Ma-a-OfiuZwOk2k5PuDp8UrFu3ySKtH8gcIg/exec';
+
+let data = [];
+let currentFilter = 'all';
+
+// =================== スプレッドシートからデータ取得 ===================
+async function loadData() {
+  const con = document.getElementById('cardsContainer');
+  con.innerHTML = '<div style="text-align:center;padding:40px;color:var(--text-light);font-size:16px;">読み込み中...🥬</div>';
+  try {
+    const res = await fetch(GAS_URL);
+    const rows = await res.json();
+    data = rows.map((row, i) => {
+      // Q&A最大6問
+      const qa = [];
+      for(let n=1; n<=6; n++){
+        const q = row[`Q${n}`], a = row[`A${n}`];
+        if(q && a) qa.push({q, a});
+      }
+      // 洋服写真（カンマ区切りで複数URL）
+      const outfitRaw = row['洋服写真'] || '';
+      const outfits = outfitRaw ? outfitRaw.split(',').map(s=>s.trim()).filter(Boolean) : [];
+      const course = row['コース'] || '3months';
+      return {
+        id: i+1,
+        name: row['名前'] || '—',
+        age: row['年代'] || '—',
+        job: row['職業'] || '—',
+        height: row['身長'] || '—',
+        course,
+        continued: course === 'continued',
+        stats: {
+          weight:  { b: parseFloat(row['体重before'])||null,  a: parseFloat(row['体重after'])||null },
+          bodyfat: { b: parseFloat(row['体脂肪before'])||null, a: parseFloat(row['体脂肪after'])||null },
+          waist:   { b: parseFloat(row['ウエストbefore'])||null, a: parseFloat(row['ウエストafter'])||null },
+          under:   { b: parseFloat(row['アンダーbefore'])||null, a: parseFloat(row['アンダーafter'])||null },
+        },
+        photos: {
+          before:    row['写真before'] || null,
+          after:     row['写真after'] || null,
+          afterCont: row['写真after継続'] || null,
+        },
+        outfits,
+        qa
+      };
+    });
+    renderCards(currentFilter);
+  } catch(e) {
+    con.innerHTML = '<div style="text-align:center;padding:40px;color:#c00;font-size:15px;">データの読み込みに失敗しました。<br>しばらくしてから再読み込みしてください。</div>';
   }
-];
+}
 
 // =================== カード描画 ===================
 function renderCards(filter='all') {
@@ -842,6 +865,7 @@ function toggleQA(btn) {
 }
 
 function filterCards(f, btn) {
+  currentFilter = f;
   document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
   renderCards(f);
@@ -1009,7 +1033,7 @@ function resetModal() {
 }
 
 // 初期化
-renderCards();
+loadData();
 </script>
 </body>
 </html>
