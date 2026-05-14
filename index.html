@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0042)file:///Users/yoshi/Downloads/index_4.html -->
+<!-- saved from url=(0042)file:///Users/yoshi/Downloads/index_6.html -->
 <html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
@@ -596,8 +596,10 @@
   <button class="filter-btn active" onclick="filterCards(&#39;all&#39;,this)">すべて</button>
   <button class="filter-btn" onclick="filterCards(&#39;3months&#39;,this)">3ヶ月講座</button>
   <button class="filter-btn" onclick="filterCards(&#39;continued&#39;,this)">継続卒業</button>
+  <button class="filter-btn" onclick="filterCards(&#39;30s-&#39;,this)">30代以下</button>
   <button class="filter-btn" onclick="filterCards(&#39;40s&#39;,this)">40代</button>
   <button class="filter-btn" onclick="filterCards(&#39;50s&#39;,this)">50代</button>
+  <button class="filter-btn" onclick="filterCards(&#39;60s+&#39;,this)">60代以上</button>
 </div>
 
 <div class="count-bar">
@@ -614,7 +616,7 @@
           <span class="profile-tag">160cm</span>
         </div>
       </div>
-      <span class="course-badge ">継続</span>
+      <span class="course-badge ">3ヶ月講座</span>
     </div>
     <div class="photos-area">
       <div class="section-label">Before / After</div>
@@ -631,7 +633,12 @@
       </div>
       <span class="photo-label">アフター</span>
     </div></div>
-      
+      <div class="outfit-section">
+        <div class="section-label" style="margin-bottom:8px;">👗 似合う洋服</div>
+        <div class="outfit-scroll">
+          <div class="outfit-photo"><img src="./卒業生の声｜よしみ 食べ痩せダイエット_files/9B8DC1C0-E1E4-4ABB-988E-11EDD9AD3DD3.png"></div>
+        </div>
+      </div>
     </div>
     
     <div class="stats-area">
@@ -839,8 +846,10 @@ function renderCards(filter='all') {
     if(filter==='all') return true;
     if(filter==='3months') return d.course==='3months';
     if(filter==='continued') return d.continued;
+    if(filter==='30s-') return d.age.includes('20代')||d.age.includes('30代');
     if(filter==='40s') return d.age.includes('40代');
     if(filter==='50s') return d.age.includes('50代');
+    if(filter==='60s+') return d.age.includes('60代')||d.age.includes('70代');
     return true;
   });
   document.getElementById('countNum').textContent = data.length;
