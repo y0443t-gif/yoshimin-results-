@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8">
+<!-- saved from url=(0042)file:///Users/yoshi/Downloads/index_2.html -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>卒業生の声｜よしみ 食べ痩せダイエット</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="./卒業生の声｜よしみ 食べ痩せダイエット_files/css2" rel="stylesheet">
 <style>
   :root {
     --green: #6aaa67;
@@ -593,18 +593,94 @@
 </header>
 
 <div class="filter-bar">
-  <button class="filter-btn active" onclick="filterCards('all',this)">すべて</button>
-  <button class="filter-btn" onclick="filterCards('3months',this)">3ヶ月講座</button>
-  <button class="filter-btn" onclick="filterCards('continued',this)">継続卒業</button>
-  <button class="filter-btn" onclick="filterCards('40s',this)">40代</button>
-  <button class="filter-btn" onclick="filterCards('50s',this)">50代</button>
+  <button class="filter-btn active" onclick="filterCards(&#39;all&#39;,this)">すべて</button>
+  <button class="filter-btn" onclick="filterCards(&#39;3months&#39;,this)">3ヶ月講座</button>
+  <button class="filter-btn" onclick="filterCards(&#39;continued&#39;,this)">継続卒業</button>
+  <button class="filter-btn" onclick="filterCards(&#39;40s&#39;,this)">40代</button>
+  <button class="filter-btn" onclick="filterCards(&#39;50s&#39;,this)">50代</button>
 </div>
 
 <div class="count-bar">
-  <strong id="countNum">2</strong> 名の実績を掲載中
+  <strong id="countNum">1</strong> 名の実績を掲載中
 </div>
 
-<div class="cards-container" id="cardsContainer"></div>
+<div class="cards-container" id="cardsContainer"><div class="result-card" style="animation-delay: 0s;">
+    <div class="card-header">
+      <div>
+        <div class="profile-name">Yさん</div>
+        <div class="profile-tags">
+          <span class="profile-tag">50代</span>
+          <span class="profile-tag">パート</span>
+          <span class="profile-tag">160cm</span>
+        </div>
+      </div>
+      <span class="course-badge ">継続</span>
+    </div>
+    <div class="photos-area">
+      <div class="section-label">Before / After</div>
+      <div class="photos-grid">
+    <div class="photo-item">
+      <div class="photo-box">
+        <img src="./卒業生の声｜よしみ 食べ痩せダイエット_files/IMG_0591.jpg" alt="ビフォー">
+      </div>
+      <span class="photo-label">ビフォー</span>
+    </div>
+    <div class="photo-item">
+      <div class="photo-box">
+        <img src="./卒業生の声｜よしみ 食べ痩せダイエット_files/IMG_0592.jpg" alt="アフター">
+      </div>
+      <span class="photo-label">アフター</span>
+    </div></div>
+      
+    </div>
+    
+    <div class="stats-area">
+      <div class="stats-grid">
+        <div class="stat-item">
+            <div class="stat-label">体重</div>
+            <div class="stat-row">
+              <span class="stat-before">70.5kg</span>
+              <span class="stat-arrow">→</span>
+              <span class="stat-after">68.1</span>
+              <span class="stat-unit">kg</span>
+            </div>
+            <div class="stat-diff">-2.4kg</div>
+          </div><div class="stat-item">
+            <div class="stat-label">体脂肪率</div>
+            <div class="stat-row">
+              <span class="stat-before">37.6%</span>
+              <span class="stat-arrow">→</span>
+              <span class="stat-after">36.8</span>
+              <span class="stat-unit">%</span>
+            </div>
+            <div class="stat-diff">-0.8%</div>
+          </div><div class="stat-item">
+            <div class="stat-label">ウエスト</div>
+            <div class="stat-row">
+              <span class="stat-before">88cm</span>
+              <span class="stat-arrow">→</span>
+              <span class="stat-after">85.5</span>
+              <span class="stat-unit">cm</span>
+            </div>
+            <div class="stat-diff">-2.5cm</div>
+          </div><div class="stat-item">
+            <div class="stat-label">アンダー</div>
+            <div class="stat-row">
+              <span class="stat-before">83cm</span>
+              <span class="stat-arrow">→</span>
+              <span class="stat-after">83</span>
+              <span class="stat-unit">cm</span>
+            </div>
+            <div class="stat-diff">0.0cm</div>
+          </div>
+      </div>
+    </div>
+    <div class="qa-area">
+      <button class="qa-toggle" onclick="toggleQA(this)">
+        受講者の声を見る <span class="chevron">▼</span>
+      </button>
+      <div class="qa-list"></div>
+    </div></div></div>
 
 <button class="add-fab" onclick="openModal()">＋</button>
 
@@ -625,7 +701,7 @@
         <select id="f_age">
           <option>30代前半</option><option>30代後半</option>
           <option>40代前半</option><option>40代後半</option>
-          <option selected>50代前半</option><option>50代後半</option><option>60代</option>
+          <option selected="">50代前半</option><option>50代後半</option><option>60代</option>
         </select>
       </div>
       <div class="fg">
@@ -682,7 +758,7 @@
       <div class="fg"><label>アンダー after</label><input type="number" step="0.1" id="f_ua" placeholder="71.0"></div>
     </div>
 
-    <div class="fsec">💬 Q&A（4〜6問）</div>
+    <div class="fsec">💬 Q&amp;A（4〜6問）</div>
     <div id="qaContainer">
       <div class="qa-pair">
         <div class="fg"><label>Q1</label><input type="text" placeholder="受ける前のお悩みは？"></div>
@@ -702,7 +778,13 @@ const GAS_URL = 'https://script.google.com/macros/s/AKfycbziLBebr9bhQFHV8Z874Iy5
 let data = [];
 let currentFilter = 'all';
 
-// =================== スプレッドシートからデータ取得 ===================
+// =================== GoogleドライブURL変換 ===================
+function toDriveImg(url) {
+  if (!url) return null;
+  const match = url.match(/\/d\/([a-zA-Z0-9_-]+)/);
+  if (match) return `https://drive.google.com/thumbnail?id=${match[1]}&sz=w600`;
+  return url;
+}
 async function loadData() {
   const con = document.getElementById('cardsContainer');
   con.innerHTML = '<div style="text-align:center;padding:40px;color:var(--text-light);font-size:16px;">読み込み中...🥬</div>';
@@ -718,7 +800,7 @@ async function loadData() {
       }
       // 洋服写真（カンマ区切りで複数URL）
       const outfitRaw = row['洋服写真'] || '';
-      const outfits = outfitRaw ? outfitRaw.split(',').map(s=>s.trim()).filter(Boolean) : [];
+      const outfits = outfitRaw ? outfitRaw.split(',').map(s=>toDriveImg(s.trim())).filter(Boolean) : [];
       const course = row['コース'] || '3months';
       return {
         id: i+1,
@@ -735,9 +817,9 @@ async function loadData() {
           under:   { b: parseFloat(row['アンダーbefore'])||null, a: parseFloat(row['アンダーafter'])||null },
         },
         photos: {
-          before:    row['写真before'] || null,
-          after:     row['写真after'] || null,
-          afterCont: row['写真after継続'] || null,
+          before:    toDriveImg(row['写真before'] || null),
+          after:     toDriveImg(row['写真after'] || null),
+          afterCont: toDriveImg(row['写真after継続'] || null),
         },
         outfits,
         qa
@@ -1035,5 +1117,6 @@ function resetModal() {
 // 初期化
 loadData();
 </script>
-</body>
-</html>
+
+
+</body></html>
