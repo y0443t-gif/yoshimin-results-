@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>卒業生の声｜よしみ 食べ痩せダイエット</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #6aaa67;
+    --green-light: #b2d9b0;
+    --green-pale: #edf6ec;
+    --green-dark: #3d7a3a;
+    --cream: #faf8f3;
+    --text: #2a2a2a;
+    --text-light: #888;
+    --white: #fff;
+    --shadow: 0 4px 24px rgba(106,170,103,0.13);
+    --font-serif: 'Noto Serif JP', serif;
+    --font-sans: 'Noto Sans JP', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+  body {
+    font-family: var(--font-serif);
+    background: var(--cream);
+    color: var(--text);
+    font-size: 17px;
+    line-height: 1.8;
+  }
+
+  /* ヘッダー */
+  .site-header {
+    background: var(--white);
+    padding: 18px 20px 14px;
+    text-align: center;
+    border-bottom: 3px solid var(--green-light);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .site-header h1 {
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--green-dark);
+    letter-spacing: 0.06em;
+  }
+  .site-header p {
+    font-size: 13px;
+    color: var(--text-light);
+    margin-top: 3px;
+    font-family: var(--font-sans);
+  }
+
+  /* フィルター */
+  .filter-bar {
+    padding: 12px 14px;
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    background: var(--white);
+    border-bottom: 1px solid #e8e8e8;
+  }
+  .filter-bar::-webkit-scrollbar { display: none; }
+  .filter-btn {
+    white-space: nowrap;
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 2px solid var(--green-light);
+    background: var(--white);
+    color: var(--text-light);
+    font-size: 14px;
+    font-family: var(--font-serif);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    flex-shrink: 0;
+  }
+  .filter-btn.active {
+    background: var(--green);
+    border-color: var(--green);
+    color: var(--white);
+  }
+
+  /* カウント */
+  .count-bar {
+    padding: 10px 16px;
+    font-size: 14px;
+    color: var(--text-light);
+    text-align: center;
+    font-family: var(--font-sans);
+  }
+  .count-bar strong { color: var(--green-dark); font-size: 16px; }
+
+  /* カード一覧 */
+  .cards-container {
+    padding: 14px 14px 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  /* カード */
+  .result-card {
+    background: var(--white);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    animation: fadeUp 0.4s ease both;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* カードヘッダー */
+  .card-header {
+    background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
+    padding: 16px 18px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .profile-name {
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--white);
+    letter-spacing: 0.04em;
+  }
+  .profile-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-top: 6px;
+  }
+  .profile-tag {
+    background: rgba(255,255,255,0.22);
+    color: var(--white);
+    font-size: 13px;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-family: var(--font-sans);
+  }
+  .course-badge {
+    background: rgba(255,255,255,0.18);
+    border: 1.5px solid rgba(255,255,255,0.5);
+    color: var(--white);
+    font-size: 12px;
+    padding: 5px 11px;
+    border-radius: 10px;
+    white-space: nowrap;
+    font-family: var(--font-sans);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .course-badge.continued {
+    background: rgba(255,220,80,0.28);
+    border-color: rgba(255,220,80,0.7);
+  }
+
+  /* 写真エリア */
+  .photos-area {
+    padding: 16px;
+    background: var(--green-pale);
+  }
+  .section-label {
+    font-size: 12px;
+    font-family: var(--font-sans);
+    color: var(--green-dark);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .photos-grid {
+    display: flex;
+    gap: 10px;
+  }
+  .photo-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+  .photo-box {
+    width: 100%;
+    aspect-ratio: 3/4;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #d6ead5;
+    position: relative;
+  }
+  .photo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .photo-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    color: var(--green-dark);
+    opacity: 0.5;
+  }
+  .photo-placeholder span { font-size: 28px; }
+  .photo-placeholder p { font-size: 10px; font-family: var(--font-sans); }
+  .photo-label {
+    font-size: 12px;
+    font-family: var(--font-sans);
+    color: var(--text-light);
+    font-weight: 700;
+  }
+
+  /* 洋服写真 */
+  .outfit-section {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--green-light);
+  }
+  .outfit-scroll {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding-bottom: 4px;
+  }
+  .outfit-scroll::-webkit-scrollbar { display: none; }
+  .outfit-photo {
+    flex-shrink: 0;
+    width: 88px;
+    aspect-ratio: 3/4;
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--green-light);
+  }
+  .outfit-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  /* 数値 */
+  .stats-area {
+    padding: 16px;
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .stat-item {
+    background: var(--green-pale);
+    border-radius: 12px;
+    padding: 12px 14px;
+  }
+  .stat-label {
+    font-size: 13px;
+    font-family: var(--font-sans);
+    color: var(--text-light);
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+  .stat-row {
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+    flex-wrap: wrap;
+  }
+  .stat-before {
+    font-size: 14px;
+    color: var(--text-light);
+    text-decoration: line-through;
+    font-family: var(--font-sans);
+  }
+  .stat-arrow { font-size: 13px; color: var(--green); }
+  .stat-after {
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--green-dark);
+    font-family: var(--font-sans);
+  }
+  .stat-unit { font-size: 13px; color: var(--green-dark); font-family: var(--font-sans); }
+  .stat-diff {
+    font-size: 12px;
+    color: var(--green);
+    font-weight: 700;
+    font-family: var(--font-sans);
+    margin-top: 2px;
+  }
+
+  /* Q&A */
+  .qa-area { padding: 0 16px 16px; }
+  .qa-toggle {
+    width: 100%;
+    background: none;
+    border: none;
+    border-top: 2px solid var(--green-pale);
+    padding: 14px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: var(--font-serif);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--green-dark);
+    cursor: pointer;
+  }
+  .qa-toggle .chevron { transition: transform 0.3s; font-size: 14px; }
+  .qa-toggle.open .chevron { transform: rotate(180deg); }
+  .qa-list { display: none; flex-direction: column; gap: 16px; padding-top: 6px; }
+  .qa-list.open { display: flex; }
+  .qa-q {
+    background: var(--green-pale);
+    border-left: 4px solid var(--green);
+    padding: 10px 12px;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--green-dark);
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 8px;
+  }
+  .qa-a {
+    font-size: 16px;
+    line-height: 1.85;
+    color: var(--text);
+    padding: 0 4px;
+  }
+
+  /* 追加ボタン */
+  .add-fab {
+    position: fixed;
+    bottom: 26px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--green);
+    color: var(--white);
+    border: none;
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(106,170,103,0.45);
+    cursor: pointer;
+    z-index: 200;
+    transition: transform 0.15s;
+  }
+  .add-fab:active { transform: scale(0.93); }
+
+  /* モーダル */
+  .overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.52);
+    z-index: 300;
+    align-items: flex-end;
+  }
+  .overlay.open { display: flex; }
+  .modal {
+    background: var(--white);
+    border-radius: 22px 22px 0 0;
+    width: 100%;
+    max-height: 92vh;
+    overflow-y: auto;
+    padding: 24px 18px 40px;
+    animation: slideUp 0.28s ease;
+    position: relative;
+  }
+  @keyframes slideUp {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+  }
+  .modal-title {
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--green-dark);
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .modal-close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    background: none;
+    border: none;
+    font-size: 26px;
+    color: var(--text-light);
+    cursor: pointer;
+    line-height: 1;
+  }
+
+  /* フォーム */
+  .fsec {
+    font-size: 14px;
+    font-weight: 700;
+    font-family: var(--font-sans);
+    color: var(--green-dark);
+    margin: 20px 0 10px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--green-light);
+    letter-spacing: 0.05em;
+  }
+  .fg { margin-bottom: 14px; }
+  .fg label {
+    display: block;
+    font-size: 13px;
+    font-family: var(--font-sans);
+    color: var(--text-light);
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+  .fg input, .fg select, .fg textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 2px solid var(--green-light);
+    border-radius: 10px;
+    font-family: var(--font-serif);
+    font-size: 16px;
+    color: var(--text);
+    background: var(--white);
+    outline: none;
+    -webkit-appearance: none;
+  }
+  .fg input:focus, .fg select:focus, .fg textarea:focus {
+    border-color: var(--green);
+  }
+  .fg textarea { min-height: 88px; resize: vertical; line-height: 1.7; }
+  .frow { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+  /* 写真アップロード */
+  .photo-upload-grid {
+    display: flex;
+    gap: 10px;
+    margin-top: 4px;
+  }
+  .photo-upload-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+  .photo-upload-box {
+    width: 100%;
+    aspect-ratio: 3/4;
+    border-radius: 10px;
+    border: 2px dashed var(--green-light);
+    background: var(--green-pale);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .photo-upload-box:active { border-color: var(--green); }
+  .photo-upload-box img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .photo-upload-box input[type="file"] {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 0;
+    font-size: 0;
+  }
+  .upload-icon { font-size: 22px; pointer-events: none; }
+  .upload-hint { font-size: 10px; color: var(--text-light); font-family: var(--font-sans); pointer-events: none; }
+  .photo-upload-label {
+    font-size: 12px;
+    font-family: var(--font-sans);
+    color: var(--text-light);
+    font-weight: 700;
+  }
+
+  /* 洋服写真アップロード */
+  .outfit-upload-area {
+    margin-top: 6px;
+  }
+  .outfit-upload-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .outfit-upload-box {
+    width: 80px;
+    aspect-ratio: 3/4;
+    border-radius: 8px;
+    border: 2px dashed var(--green-light);
+    background: var(--green-pale);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  .outfit-upload-box img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .outfit-upload-box input[type="file"] {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 0;
+    font-size: 0;
+  }
+  .outfit-add-btn {
+    width: 80px;
+    aspect-ratio: 3/4;
+    border-radius: 8px;
+    border: 2px dashed var(--green-light);
+    background: var(--green-pale);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 22px;
+    color: var(--green);
+    flex-shrink: 0;
+  }
+
+  /* Q&A入力 */
+  .qa-pair { margin-bottom: 14px; background: var(--green-pale); border-radius: 10px; padding: 12px; }
+  .qa-add-btn {
+    width: 100%;
+    padding: 11px;
+    background: var(--green-pale);
+    border: 2px dashed var(--green-light);
+    border-radius: 10px;
+    color: var(--green-dark);
+    font-size: 15px;
+    font-family: var(--font-serif);
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 4px;
+  }
+
+  /* 送信 */
+  .submit-btn {
+    width: 100%;
+    padding: 16px;
+    background: var(--green);
+    color: var(--white);
+    border: none;
+    border-radius: 14px;
+    font-size: 17px;
+    font-weight: 900;
+    font-family: var(--font-serif);
+    cursor: pointer;
+    margin-top: 22px;
+    letter-spacing: 0.06em;
+    box-shadow: 0 4px 16px rgba(106,170,103,0.35);
+  }
+
+  /* 課題オプション表示切替 */
+  .outfit-section-form { display: none; }
+  .outfit-section-form.visible { display: block; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <h1>🥬 よしみ｜食べ痩せダイエット</h1>
+  <p>卒業生の声</p>
+</header>
+
+<div class="filter-bar">
+  <button class="filter-btn active" onclick="filterCards('all',this)">すべて</button>
+  <button class="filter-btn" onclick="filterCards('3months',this)">3ヶ月講座</button>
+  <button class="filter-btn" onclick="filterCards('continued',this)">継続卒業</button>
+  <button class="filter-btn" onclick="filterCards('40s',this)">40代</button>
+  <button class="filter-btn" onclick="filterCards('50s',this)">50代</button>
+</div>
+
+<div class="count-bar">
+  <strong id="countNum">2</strong> 名の実績を掲載中
+</div>
+
+<div class="cards-container" id="cardsContainer"></div>
+
+<button class="add-fab" onclick="openModal()">＋</button>
+
+<!-- モーダル -->
+<div class="overlay" id="overlay">
+  <div class="modal" id="modal">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <div class="modal-title">卒業生を追加する 🥬</div>
+
+    <div class="fsec">📋 プロフィール</div>
+    <div class="fg">
+      <label>表示名（例：Aさん）</label>
+      <input type="text" id="f_name" placeholder="Aさん">
+    </div>
+    <div class="frow">
+      <div class="fg">
+        <label>年代</label>
+        <select id="f_age">
+          <option>30代前半</option><option>30代後半</option>
+          <option>40代前半</option><option>40代後半</option>
+          <option selected>50代前半</option><option>50代後半</option><option>60代</option>
+        </select>
+      </div>
+      <div class="fg">
+        <label>職業</label>
+        <input type="text" id="f_job" placeholder="主婦・会社員">
+      </div>
+    </div>
+    <div class="frow">
+      <div class="fg">
+        <label>身長(cm)</label>
+        <input type="number" id="f_height" placeholder="158">
+      </div>
+      <div class="fg">
+        <label>コース</label>
+        <select id="f_course" onchange="toggleOutfitSection(this.value)">
+          <option value="1month">1ヶ月サポート</option>
+          <option value="3months">3ヶ月講座</option>
+          <option value="continued">継続卒業</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="fsec">📸 写真</div>
+    <div id="photoUploadArea">
+      <!-- JSで動的に生成 -->
+    </div>
+
+    <!-- 洋服写真（3ヶ月・継続のみ表示） -->
+    <div class="outfit-section-form" id="outfitSectionForm">
+      <div class="fsec">👗 似合う洋服写真（任意）</div>
+      <p style="font-size:13px;color:var(--text-light);font-family:var(--font-sans);margin-bottom:10px;">複数枚追加できます。ない場合は空欄でOKです。</p>
+      <div class="outfit-upload-area">
+        <div class="outfit-upload-row" id="outfitUploadRow">
+          <div class="outfit-add-btn" onclick="addOutfitSlot()">＋</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fsec">📊 数値（空白でもOK）</div>
+    <div class="frow">
+      <div class="fg"><label>体重 before(kg)</label><input type="number" step="0.1" id="f_wb" placeholder="60.0"></div>
+      <div class="fg"><label>体重 after(kg)</label><input type="number" step="0.1" id="f_wa" placeholder="55.0"></div>
+    </div>
+    <div class="frow">
+      <div class="fg"><label>体脂肪 before(%)</label><input type="number" step="0.1" id="f_bfb" placeholder="36.0"></div>
+      <div class="fg"><label>体脂肪 after(%)</label><input type="number" step="0.1" id="f_bfa" placeholder="31.0"></div>
+    </div>
+    <div class="frow">
+      <div class="fg"><label>ウエスト before</label><input type="number" step="0.1" id="f_w2b" placeholder="85.0"></div>
+      <div class="fg"><label>ウエスト after</label><input type="number" step="0.1" id="f_w2a" placeholder="78.0"></div>
+    </div>
+    <div class="frow">
+      <div class="fg"><label>アンダー before</label><input type="number" step="0.1" id="f_ub" placeholder="76.0"></div>
+      <div class="fg"><label>アンダー after</label><input type="number" step="0.1" id="f_ua" placeholder="71.0"></div>
+    </div>
+
+    <div class="fsec">💬 Q&A（4〜6問）</div>
+    <div id="qaContainer">
+      <div class="qa-pair">
+        <div class="fg"><label>Q1</label><input type="text" placeholder="受ける前のお悩みは？"></div>
+        <div class="fg" style="margin-bottom:0"><label>A1</label><textarea placeholder="回答を入力してください"></textarea></div>
+      </div>
+    </div>
+    <button class="qa-add-btn" onclick="addQAPair()">＋ 質問を追加（最大6問）</button>
+
+    <button class="submit-btn" onclick="submitCard()">追加する</button>
+  </div>
+</div>
+
+<script>
+// =================== ダミーデータ ===================
+let data = [
+  {
+    id:1, name:"Aさん", age:"50代前半", job:"パート主婦", height:158,
+    course:"3months", continued:false,
+    stats:{ weight:{b:63.5,a:58.2}, bodyfat:{b:38.5,a:33.2}, waist:{b:86,a:79}, under:{b:78,a:73} },
+    photos:{ before:null, after:null, afterCont:null },
+    outfits:[],
+    qa:[
+      {q:"受ける前はどんなお悩みがありましたか？", a:"何度もダイエットに挑戦してはリバウンドを繰り返していました。50代に入って代謝が落ちた感じがして、もう痩せられないと諦めかけていました。"},
+      {q:"一番変わったことは何ですか？", a:"食べながら痩せられるって本当なんだ！と実感できたことです。お米を食べてもいいと言われたとき半信半疑でしたが、体が変わっていくのを感じました。"},
+      {q:"続けられた秘訣を教えてください", a:"よっちゃんがいつも「大丈夫だよ」と背中を押してくれたこと。完璧じゃなくていい、70点でいい、という考え方が私には合っていました。"},
+      {q:"どんな方におすすめしたいですか？", a:"何度もリバウンドを繰り返してきた方、食べることが好きで食べないダイエットに限界を感じている方にぜひ体験してほしいです！"}
+    ]
+  },
+  {
+    id:2, name:"Bさん", age:"40代後半", job:"会社員", height:162,
+    course:"continued", continued:true,
+    stats:{ weight:{b:68.0,a:61.5}, bodyfat:{b:40.2,a:34.8}, waist:{b:90,a:80}, under:{b:82,a:76} },
+    photos:{ before:null, after:null, afterCont:null },
+    outfits:[],
+    qa:[
+      {q:"受ける前はどんな状態でしたか？", a:"更年期の影響もあって体重が増え続けていました。運動しても食事制限しても全然変わらず、もうこれが私の体質だと思っていました。"},
+      {q:"継続しようと思ったきっかけは？", a:"3ヶ月講座を終えた時点でまだまだ変われる可能性を感じたから。よっちゃんともう少し一緒に頑張りたいと思いました。"},
+      {q:"継続して良かったことは？", a:"ダイエットが習慣になりました。「今日は食べすぎた」と思っても焦らなくなったし、自分の体のクセが分かるようになりました。"},
+      {q:"今後の目標を教えてください", a:"体重より体型！好きな洋服を着こなせる体を目指します。よっちゃんに撮ってもらった洋服写真が宝物です😊"}
+    ]
+  }
+];
+
+// =================== カード描画 ===================
+function renderCards(filter='all') {
+  const con = document.getElementById('cardsContainer');
+  con.innerHTML = '';
+  const filtered = data.filter(d => {
+    if(filter==='all') return true;
+    if(filter==='3months') return d.course==='3months';
+    if(filter==='continued') return d.continued;
+    if(filter==='40s') return d.age.includes('40代');
+    if(filter==='50s') return d.age.includes('50代');
+    return true;
+  });
+  document.getElementById('countNum').textContent = data.length;
+  filtered.forEach((d,i) => {
+    const el = document.createElement('div');
+    el.className = 'result-card';
+    el.style.animationDelay = `${i*0.07}s`;
+    el.innerHTML = cardHTML(d);
+    con.appendChild(el);
+  });
+}
+
+function cardHTML(d) {
+  const courseNames = {
+    '1month':'1ヶ月サポート','3months':'3ヶ月講座','continued':'継続卒業'
+  };
+
+  // 写真ラベル
+  const pLabels = d.continued ? ['ビフォー','講座後','継続卒業時'] : ['ビフォー','アフター'];
+  const pKeys   = d.continued ? ['before','after','afterCont'] : ['before','after'];
+  const photosHTML = pKeys.map((k,i) => `
+    <div class="photo-item">
+      <div class="photo-box">
+        ${d.photos[k]
+          ? `<img src="${d.photos[k]}" alt="${pLabels[i]}">`
+          : `<div class="photo-placeholder"><span>📷</span></div>`}
+      </div>
+      <span class="photo-label">${pLabels[i]}</span>
+    </div>`).join('');
+
+  // 洋服写真
+  const outfitHTML = (d.course==='3months'||d.continued) && d.outfits.length>0
+    ? `<div class="outfit-section">
+        <div class="section-label" style="margin-bottom:8px;">👗 似合う洋服</div>
+        <div class="outfit-scroll">
+          ${d.outfits.map(src=>`<div class="outfit-photo"><img src="${src}"></div>`).join('')}
+        </div>
+      </div>` : '';
+
+  // 数値
+  const statsItems = [
+    {label:'体重', v:d.stats.weight, unit:'kg'},
+    {label:'体脂肪率', v:d.stats.bodyfat, unit:'%'},
+    {label:'ウエスト', v:d.stats.waist, unit:'cm'},
+    {label:'アンダー', v:d.stats.under, unit:'cm'},
+  ].filter(s=>s.v&&s.v.b&&s.v.a);
+
+  const statsHTML = statsItems.length===0 ? '' : `
+    <div class="stats-area">
+      <div class="stats-grid">
+        ${statsItems.map(s=>{
+          const diff = (s.v.a - s.v.b).toFixed(1);
+          const sign = diff>0?'+':'';
+          return `<div class="stat-item">
+            <div class="stat-label">${s.label}</div>
+            <div class="stat-row">
+              <span class="stat-before">${s.v.b}${s.unit}</span>
+              <span class="stat-arrow">→</span>
+              <span class="stat-after">${s.v.a}</span>
+              <span class="stat-unit">${s.unit}</span>
+            </div>
+            <div class="stat-diff">${sign}${diff}${s.unit}</div>
+          </div>`;
+        }).join('')}
+      </div>
+    </div>`;
+
+  // Q&A
+  const qaHTML = d.qa.map((q,i)=>`
+    <div>
+      <div class="qa-q">Q${i+1}. ${q.q}</div>
+      <div class="qa-a">${q.a}</div>
+    </div>`).join('');
+
+  return `
+    <div class="card-header">
+      <div>
+        <div class="profile-name">${d.name}</div>
+        <div class="profile-tags">
+          <span class="profile-tag">${d.age}</span>
+          <span class="profile-tag">${d.job}</span>
+          <span class="profile-tag">${d.height}cm</span>
+        </div>
+      </div>
+      <span class="course-badge ${d.continued?'continued':''}">${courseNames[d.course]||d.course}</span>
+    </div>
+    <div class="photos-area">
+      <div class="section-label">Before / After</div>
+      <div class="photos-grid">${photosHTML}</div>
+      ${outfitHTML}
+    </div>
+    ${statsHTML}
+    <div class="qa-area">
+      <button class="qa-toggle" onclick="toggleQA(this)">
+        受講者の声を見る <span class="chevron">▼</span>
+      </button>
+      <div class="qa-list">${qaHTML}</div>
+    </div>`;
+}
+
+function toggleQA(btn) {
+  btn.classList.toggle('open');
+  btn.nextElementSibling.classList.toggle('open');
+}
+
+function filterCards(f, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderCards(f);
+}
+
+// =================== モーダル ===================
+function openModal() {
+  document.getElementById('overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  buildPhotoUploads('1month');
+}
+function closeModal() {
+  document.getElementById('overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// コース変更で写真エリア再構築
+function toggleOutfitSection(course) {
+  buildPhotoUploads(course);
+  const of = document.getElementById('outfitSectionForm');
+  of.classList.toggle('visible', course==='3months'||course==='continued');
+}
+
+// 写真アップロードUI構築
+function buildPhotoUploads(course) {
+  const area = document.getElementById('photoUploadArea');
+  const isCont = course === 'continued';
+  const slots = isCont
+    ? [{key:'before',label:'ビフォー'},{key:'after',label:'講座後'},{key:'afterCont',label:'継続卒業時'}]
+    : [{key:'before',label:'ビフォー'},{key:'after',label:'アフター'}];
+
+  area.innerHTML = `
+    <div class="photo-upload-grid">
+      ${slots.map(s=>`
+        <div class="photo-upload-item">
+          <div class="photo-upload-box" id="box_${s.key}">
+            <span class="upload-icon">📷</span>
+            <span class="upload-hint">タップして選択</span>
+            <input type="file" accept="image/*" capture="environment"
+              onchange="previewPhoto(this,'${s.key}')">
+          </div>
+          <span class="photo-upload-label">${s.label}</span>
+        </div>`).join('')}
+    </div>`;
+}
+
+// 写真プレビュー
+function previewPhoto(input, key) {
+  const file = input.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    const box = document.getElementById('box_'+key);
+    let img = box.querySelector('img');
+    if(!img){ img=document.createElement('img'); box.appendChild(img); }
+    img.src = e.target.result;
+    box.querySelectorAll('.upload-icon,.upload-hint').forEach(el=>el.style.display='none');
+    window['_photo_'+key] = e.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+
+// 洋服写真スロット追加
+let outfitImages = [];
+function addOutfitSlot() {
+  const row = document.getElementById('outfitUploadRow');
+  const idx = outfitImages.length;
+  outfitImages.push(null);
+  const div = document.createElement('div');
+  div.className = 'outfit-upload-box';
+  div.id = `outfit_${idx}`;
+  div.innerHTML = `
+    <span class="upload-icon" style="font-size:18px;">📷</span>
+    <input type="file" accept="image/*" onchange="previewOutfit(this,${idx})">`;
+  row.insertBefore(div, row.lastElementChild);
+}
+
+function previewOutfit(input, idx) {
+  const file = input.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    outfitImages[idx] = e.target.result;
+    const box = document.getElementById('outfit_'+idx);
+    let img = box.querySelector('img');
+    if(!img){ img=document.createElement('img'); box.appendChild(img); }
+    img.src = e.target.result;
+    box.querySelector('.upload-icon').style.display='none';
+  };
+  reader.readAsDataURL(file);
+}
+
+// Q&A
+let qaCount = 1;
+function addQAPair() {
+  if(qaCount>=6){alert('Q&Aは最大6問です');return;}
+  qaCount++;
+  const con = document.getElementById('qaContainer');
+  const div = document.createElement('div');
+  div.className = 'qa-pair';
+  div.innerHTML = `
+    <div class="fg"><label>Q${qaCount}</label><input type="text" placeholder="質問を入力"></div>
+    <div class="fg" style="margin-bottom:0"><label>A${qaCount}</label><textarea placeholder="回答を入力"></textarea></div>`;
+  con.appendChild(div);
+}
+
+// 送信
+function submitCard() {
+  const name = document.getElementById('f_name').value || '匿名さん';
+  const age  = document.getElementById('f_age').value;
+  const job  = document.getElementById('f_job').value || '—';
+  const h    = parseFloat(document.getElementById('f_height').value)||'—';
+  const course = document.getElementById('f_course').value;
+  const g = id => { const v=parseFloat(document.getElementById(id).value); return isNaN(v)?null:v; };
+
+  const isCont = course==='continued';
+
+  const card = {
+    id: Date.now(), name, age, job, height:h, course, continued:isCont,
+    stats:{
+      weight:{b:g('f_wb'),a:g('f_wa')},
+      bodyfat:{b:g('f_bfb'),a:g('f_bfa')},
+      waist:{b:g('f_w2b'),a:g('f_w2a')},
+      under:{b:g('f_ub'),a:g('f_ua')}
+    },
+    photos:{
+      before: window._photo_before||null,
+      after: window._photo_after||null,
+      afterCont: window._photo_afterCont||null
+    },
+    outfits: outfitImages.filter(Boolean),
+    qa: []
+  };
+
+  document.querySelectorAll('.qa-pair').forEach(pair=>{
+    const inputs = pair.querySelectorAll('input,textarea');
+    if(inputs[0].value && inputs[1].value)
+      card.qa.push({q:inputs[0].value, a:inputs[1].value});
+  });
+
+  data.unshift(card);
+  renderCards('all');
+  document.querySelectorAll('.filter-btn').forEach((b,i)=>b.classList.toggle('active',i===0));
+  closeModal();
+  resetModal();
+  setTimeout(()=>alert(`${name} を追加しました！🥬`),100);
+}
+
+function resetModal() {
+  document.getElementById('f_name').value='';
+  document.getElementById('f_job').value='';
+  document.getElementById('f_height').value='';
+  document.getElementById('f_course').value='1month';
+  document.getElementById('qaContainer').innerHTML=`
+    <div class="qa-pair">
+      <div class="fg"><label>Q1</label><input type="text" placeholder="受ける前のお悩みは？"></div>
+      <div class="fg" style="margin-bottom:0"><label>A1</label><textarea placeholder="回答を入力してください"></textarea></div>
+    </div>`;
+  qaCount=1;
+  outfitImages=[];
+  document.getElementById('outfitUploadRow').innerHTML='<div class="outfit-add-btn" onclick="addOutfitSlot()">＋</div>';
+  document.getElementById('outfitSectionForm').classList.remove('visible');
+  ['before','after','afterCont'].forEach(k=>{ delete window['_photo_'+k]; });
+  buildPhotoUploads('1month');
+}
+
+// 初期化
+renderCards();
+</script>
+</body>
+</html>
