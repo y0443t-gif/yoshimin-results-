@@ -173,43 +173,77 @@
 
   .card-header {
     background: linear-gradient(135deg, var(--green-pale), var(--beige));
-    padding: 16px 20px;
+    padding: 16px 20px 14px;
+    border-bottom: 1px solid var(--beige-dark);
+  }
+  .card-header-top {
     display: flex;
     align-items: center;
     gap: 12px;
-    border-bottom: 1px solid var(--beige-dark);
+    margin-bottom: 10px;
   }
   .card-avatar {
-    width: 44px;
-    height: 44px;
+    width: 48px;
+    height: 48px;
     background: var(--green);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
+    font-size: 22px;
     flex-shrink: 0;
   }
   .card-meta h3 {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 700;
     color: var(--text);
-  }
-  .card-meta p {
-    font-size: 12px;
-    color: var(--text-mid);
-    margin-top: 2px;
   }
   .card-tag {
     margin-left: auto;
     background: var(--green);
     color: var(--white);
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 700;
-    padding: 4px 10px;
+    padding: 5px 12px;
     border-radius: 12px;
     white-space: nowrap;
     letter-spacing: 0.05em;
+  }
+  .card-badges {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .card-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--white);
+    border: 1px solid var(--beige-dark);
+    border-radius: 10px;
+    padding: 6px 12px;
+    min-width: 60px;
+  }
+  .card-badge-label {
+    font-size: 10px;
+    color: var(--text-light);
+    letter-spacing: 0.06em;
+    margin-bottom: 2px;
+  }
+  .card-badge-value {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .card-comment {
+    background: var(--green-pale);
+    border-left: 3px solid var(--green);
+    padding: 12px 16px;
+    font-size: 13px;
+    color: var(--text-mid);
+    line-height: 1.7;
+    font-style: italic;
   }
 
   /* Before/After 写真 */
@@ -316,40 +350,44 @@
   .stat-item {
     background: var(--cream);
     border-radius: 14px;
-    padding: 12px 14px;
+    padding: 16px 16px;
     border: 1px solid var(--beige-dark);
   }
   .stat-name {
-    font-size: 11px;
+    font-size: 13px;
     color: var(--text-light);
-    margin-bottom: 4px;
+    margin-bottom: 6px;
     letter-spacing: 0.05em;
+    font-weight: 500;
   }
   .stat-values {
     display: flex;
     align-items: baseline;
-    gap: 4px;
+    gap: 6px;
     flex-wrap: wrap;
   }
   .stat-before {
-    font-size: 13px;
+    font-size: 15px;
     color: var(--text-mid);
     text-decoration: line-through;
     text-decoration-color: var(--brown-light);
   }
-  .stat-arrow { font-size: 11px; color: var(--text-light); }
+  .stat-arrow { font-size: 13px; color: var(--text-light); }
   .stat-after {
-    font-size: 15px;
+    font-size: 26px;
     font-weight: 700;
     color: var(--text);
+    font-family: 'Noto Serif JP', serif;
   }
   .stat-diff {
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 700;
     color: var(--green);
     background: var(--green-pale);
-    padding: 2px 7px;
+    padding: 4px 10px;
     border-radius: 8px;
+    margin-top: 6px;
+    display: inline-block;
   }
 
   /* Q&A */
@@ -647,8 +685,8 @@
 <!-- HEADER -->
 <header class="site-header">
   <div class="logo-emoji">🥬</div>
-  <h1>よしみん｜食べ痩せダイエット</h1>
-  <p class="tagline">3食しっかり食べて、体も心も整える</p>
+  <h1>Eat Right, Stay Light</h1>
+  <p class="tagline">よしみ｜戻せる自信をつける３ヶ月講座</p>
 </header>
 
 <!-- HERO -->
@@ -666,8 +704,9 @@
   <p class="filter-label">▾ 絞り込み</p>
   <div class="filter-scroll">
     <button class="filter-btn active" data-filter="all">すべて</button>
-    <button class="filter-btn" data-filter="3ヶ月講座">3ヶ月講座</button>
-    <button class="filter-btn" data-filter="継続卒業">継続卒業</button>
+    <button class="filter-btn" data-filter="3ヶ月">3ヶ月</button>
+    <button class="filter-btn" data-filter="1ヶ月">1ヶ月</button>
+    <button class="filter-btn" data-filter="継続">継続</button>
     <button class="filter-btn" data-filter="30代">30代</button>
     <button class="filter-btn" data-filter="40代">40代</button>
     <button class="filter-btn" data-filter="50代">50代</button>
@@ -720,14 +759,14 @@
         <input type="number" id="f-height" placeholder="158">
       </div>
       <div class="form-group">
-        <label>コース</label>
-        <select id="f-course">
-          <option value="">選択</option>
-          <option>1ヶ月サポート</option>
-          <option>3ヶ月講座</option>
-          <option>継続卒業</option>
-        </select>
+        <label>コース（例：3ヶ月、1ヶ月、継続1年など）</label>
+        <input type="text" id="f-course" placeholder="3ヶ月講座・1ヶ月サポート・継続2年 など自由に入力">
       </div>
+    </div>
+
+    <div class="form-group">
+      <label>✍️ この方の一言紹介・特徴（カードに表示されます）</label>
+      <textarea id="f-comment" placeholder="例：「甘いものが止められない」と悩んでいたAさん。食べながら体重が落ちて、自分でもびっくり！"></textarea>
     </div>
 
     <div class="form-section-title">📸 ビフォーアフター写真</div>
@@ -795,8 +834,8 @@
 
 <!-- FOOTER -->
 <footer class="site-footer">
-  <p>よしみん｜食べ痩せダイエット</p>
-  <p style="margin-top:4px;">3食しっかり食べて、一生リバウンドしない体へ</p>
+  <p style="font-size:15px;font-weight:700;color:var(--green);font-family:'Noto Serif JP',serif;">Eat Right, Stay Light</p>
+  <p style="margin-top:6px;">よしみ｜戻せる自信をつける３ヶ月講座</p>
 </footer>
 
 <!-- MODAL -->
@@ -814,6 +853,7 @@ let results = [
     job: 'パート',
     height: '160cm',
     course: '3ヶ月講座',
+    comment: '',
     photoBefore: 'https://y0443t-gif.github.io/yoshimin-results-/卒業生の声｜よしみ 食べ痩せダイエット_files/IMG_0591.jpg',
     photoAfter: 'https://y0443t-gif.github.io/yoshimin-results-/卒業生の声｜よしみ 食べ痩せダイエット_files/IMG_0592.jpg',
     outfits: ['https://y0443t-gif.github.io/yoshimin-results-/卒業生の声｜よしみ 食べ痩せダイエット_files/9B8DC1C0-E1E4-4ABB-988E-11EDD9AD3DD3.png'],
@@ -846,8 +886,8 @@ function renderCards() {
   
   let filtered = results.filter(r => {
     if (currentFilter === 'all') return true;
-    if (r.course === currentFilter) return true;
-    if (r.age && r.age.startsWith(currentFilter.replace('代',''))) return true;
+    if (r.course && r.course.includes(currentFilter)) return true;
+    if (r.age && r.age.includes(currentFilter.replace('代',''))) return true;
     if (r.age === currentFilter) return true;
     return false;
   });
@@ -897,13 +937,18 @@ function createCard(r) {
 
   card.innerHTML = `
     <div class="card-header">
-      <div class="card-avatar">🌿</div>
-      <div class="card-meta">
-        <h3>${escHtml(r.name)}</h3>
-        <p>${escHtml(r.age)}${r.job ? ' · ' + escHtml(r.job) : ''}${r.height ? ' · ' + escHtml(r.height) : ''}</p>
+      <div class="card-header-top">
+        <div class="card-avatar">🌿</div>
+        <div class="card-meta"><h3>${escHtml(r.name)}</h3></div>
+        ${r.course ? `<span class="card-tag">${escHtml(r.course)}</span>` : ''}
       </div>
-      ${r.course ? `<span class="card-tag">${escHtml(r.course)}</span>` : ''}
+      <div class="card-badges">
+        ${r.age ? `<div class="card-badge"><span class="card-badge-label">年代</span><span class="card-badge-value">${escHtml(r.age)}</span></div>` : ''}
+        ${r.job ? `<div class="card-badge"><span class="card-badge-label">職業</span><span class="card-badge-value">${escHtml(r.job)}</span></div>` : ''}
+        ${r.height ? `<div class="card-badge"><span class="card-badge-label">身長</span><span class="card-badge-value">${escHtml(r.height)}</span></div>` : ''}
+      </div>
     </div>
+    ${r.comment ? `<div class="card-comment">💬 ${escHtml(r.comment)}</div>` : ''}
     <div class="ba-photos-container">
       <div class="ba-photos">
         <div class="ba-photo-wrap">
@@ -1020,7 +1065,8 @@ function submitCard() {
     age: document.getElementById('f-age').value,
     job: document.getElementById('f-job').value.trim(),
     height: document.getElementById('f-height').value ? document.getElementById('f-height').value + 'cm' : '',
-    course: document.getElementById('f-course').value,
+    course: document.getElementById('f-course').value.trim(),
+    comment: document.getElementById('f-comment').value.trim(),
     photoBefore: beforeFile ? URL.createObjectURL(beforeFile) : '',
     photoAfter: afterFile ? URL.createObjectURL(afterFile) : '',
     outfits: outfitFiles.map(f => URL.createObjectURL(f)),
@@ -1034,7 +1080,7 @@ function submitCard() {
   // リセット
   document.getElementById('add-form-wrap').classList.remove('open');
   // フォームクリア
-  ['f-name','f-job','f-height','f-w-b','f-w-a','f-bf-b','f-bf-a','f-w-wb','f-w-wa','f-ub','f-ua'].forEach(id => document.getElementById(id).value = '');
+  ['f-name','f-job','f-height','f-w-b','f-w-a','f-bf-b','f-bf-a','f-w-wb','f-w-wa','f-ub','f-ua','f-comment'].forEach(id => document.getElementById(id).value = '');
   document.getElementById('f-age').value = '';
   document.getElementById('f-course').value = '';
   document.getElementById('prev-before').innerHTML = '';
