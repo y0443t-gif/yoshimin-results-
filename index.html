@@ -1,252 +1,312 @@
 <!DOCTYPE html>
-<!-- saved from url=(0042)file:///Users/yoshi/Downloads/index_7.html -->
-<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>卒業生の声｜よしみ 食べ痩せダイエット</title>
-<link href="./卒業生の声｜よしみ 食べ痩せダイエット_files/css2" rel="stylesheet">
+<title>卒業生の声｜よしみん 食べ痩せダイエット</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --green: #6aaa67;
-    --green-light: #b2d9b0;
-    --green-pale: #edf6ec;
-    --green-dark: #3d7a3a;
-    --cream: #faf8f3;
-    --text: #2a2a2a;
-    --text-light: #888;
-    --white: #fff;
-    --shadow: 0 4px 24px rgba(106,170,103,0.13);
-    --font-serif: 'Noto Serif JP', serif;
-    --font-sans: 'Noto Sans JP', sans-serif;
+    --cream: #F7F3EE;
+    --beige: #EDE6D9;
+    --beige-dark: #D9CEBD;
+    --green: #6B8F71;
+    --green-light: #A8C5AD;
+    --green-pale: #E8F0E9;
+    --brown: #7A6652;
+    --brown-light: #A0896E;
+    --text: #3D3530;
+    --text-mid: #6B5E52;
+    --text-light: #9B8E84;
+    --white: #FFFFFF;
+    --shadow: rgba(107, 86, 66, 0.10);
   }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
-    font-family: var(--font-serif);
+    font-family: 'Noto Sans JP', sans-serif;
     background: var(--cream);
     color: var(--text);
-    font-size: 17px;
-    line-height: 1.8;
+    min-height: 100vh;
   }
 
-  /* ヘッダー */
+  /* ===== HEADER ===== */
   .site-header {
     background: var(--white);
-    padding: 18px 20px 14px;
+    border-bottom: 2px solid var(--green-pale);
+    padding: 16px 20px;
     text-align: center;
-    border-bottom: 3px solid var(--green-light);
     position: sticky;
     top: 0;
     z-index: 100;
+    box-shadow: 0 2px 12px var(--shadow);
   }
+  .site-header .logo-emoji { font-size: 20px; }
   .site-header h1 {
-    font-size: 20px;
-    font-weight: 900;
-    color: var(--green-dark);
-    letter-spacing: 0.06em;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--green);
+    letter-spacing: 0.05em;
+    margin-top: 2px;
   }
-  .site-header p {
-    font-size: 13px;
+  .site-header .tagline {
+    font-size: 11px;
     color: var(--text-light);
-    margin-top: 3px;
-    font-family: var(--font-sans);
+    margin-top: 2px;
+    letter-spacing: 0.08em;
   }
 
-  /* フィルター */
-  .filter-bar {
-    padding: 12px 14px;
+  /* ===== HERO ===== */
+  .hero {
+    background: linear-gradient(160deg, var(--green-pale) 0%, var(--beige) 100%);
+    padding: 36px 20px 32px;
+    text-align: center;
+    border-bottom: 1px solid var(--beige-dark);
+  }
+  .hero-badge {
+    display: inline-block;
+    background: var(--green);
+    color: var(--white);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+  }
+  .hero h2 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+  .hero h2 em {
+    font-style: normal;
+    color: var(--green);
+    border-bottom: 2px solid var(--green-light);
+  }
+  .hero-sub {
+    font-size: 13px;
+    color: var(--text-mid);
+    line-height: 1.7;
+  }
+  .hero-count {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--white);
+    border: 1px solid var(--beige-dark);
+    border-radius: 24px;
+    padding: 8px 18px;
+    margin-top: 18px;
+    font-size: 13px;
+    color: var(--text-mid);
+    box-shadow: 0 2px 8px var(--shadow);
+  }
+  .hero-count strong {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--green);
+    font-family: 'Noto Serif JP', serif;
+  }
+
+  /* ===== FILTER ===== */
+  .filter-section {
+    padding: 18px 16px 10px;
+    background: var(--white);
+    border-bottom: 1px solid var(--beige);
+  }
+  .filter-label {
+    font-size: 11px;
+    color: var(--text-light);
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+  }
+  .filter-scroll {
     display: flex;
     gap: 8px;
     overflow-x: auto;
+    padding-bottom: 4px;
     scrollbar-width: none;
-    background: var(--white);
-    border-bottom: 1px solid #e8e8e8;
   }
-  .filter-bar::-webkit-scrollbar { display: none; }
+  .filter-scroll::-webkit-scrollbar { display: none; }
   .filter-btn {
-    white-space: nowrap;
-    padding: 8px 16px;
+    flex-shrink: 0;
+    padding: 7px 16px;
     border-radius: 20px;
-    border: 2px solid var(--green-light);
+    border: 1.5px solid var(--beige-dark);
     background: var(--white);
-    color: var(--text-light);
-    font-size: 14px;
-    font-family: var(--font-serif);
-    font-weight: 600;
+    color: var(--text-mid);
+    font-size: 12px;
+    font-weight: 500;
     cursor: pointer;
     transition: all 0.2s;
-    flex-shrink: 0;
+    font-family: 'Noto Sans JP', sans-serif;
+    white-space: nowrap;
   }
-  .filter-btn.active {
+  .filter-btn.active,
+  .filter-btn:hover {
     background: var(--green);
     border-color: var(--green);
     color: var(--white);
   }
 
-  /* カウント */
-  .count-bar {
-    padding: 10px 16px;
-    font-size: 14px;
-    color: var(--text-light);
-    text-align: center;
-    font-family: var(--font-sans);
-  }
-  .count-bar strong { color: var(--green-dark); font-size: 16px; }
-
-  /* カード一覧 */
-  .cards-container {
-    padding: 14px 14px 100px;
-    display: flex;
-    flex-direction: column;
-    gap: 22px;
+  /* ===== CARDS ===== */
+  .cards-section {
+    padding: 20px 16px;
+    max-width: 600px;
+    margin: 0 auto;
   }
 
-  /* カード */
   .result-card {
     background: var(--white);
-    border-radius: 18px;
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: var(--shadow);
-    animation: fadeUp 0.4s ease both;
-  }
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(14px); }
-    to { opacity: 1; transform: translateY(0); }
+    margin-bottom: 24px;
+    box-shadow: 0 4px 20px var(--shadow);
+    border: 1px solid var(--beige);
   }
 
-  /* カードヘッダー */
   .card-header {
-    background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
-    padding: 16px 18px;
+    background: linear-gradient(135deg, var(--green-pale), var(--beige));
+    padding: 16px 20px;
     display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 10px;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid var(--beige-dark);
   }
-  .profile-name {
+  .card-avatar {
+    width: 44px;
+    height: 44px;
+    background: var(--green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 20px;
-    font-weight: 900;
-    color: var(--white);
-    letter-spacing: 0.04em;
-  }
-  .profile-tags {
-    display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
-    margin-top: 6px;
-  }
-  .profile-tag {
-    background: rgba(255,255,255,0.22);
-    color: var(--white);
-    font-size: 13px;
-    padding: 3px 10px;
-    border-radius: 12px;
-    font-family: var(--font-sans);
-  }
-  .course-badge {
-    background: rgba(255,255,255,0.18);
-    border: 1.5px solid rgba(255,255,255,0.5);
-    color: var(--white);
-    font-size: 12px;
-    padding: 5px 11px;
-    border-radius: 10px;
-    white-space: nowrap;
-    font-family: var(--font-sans);
-    font-weight: 700;
     flex-shrink: 0;
   }
-  .course-badge.continued {
-    background: rgba(255,220,80,0.28);
-    border-color: rgba(255,220,80,0.7);
+  .card-meta h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .card-meta p {
+    font-size: 12px;
+    color: var(--text-mid);
+    margin-top: 2px;
+  }
+  .card-tag {
+    margin-left: auto;
+    background: var(--green);
+    color: var(--white);
+    font-size: 10px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 12px;
+    white-space: nowrap;
+    letter-spacing: 0.05em;
   }
 
-  /* 写真エリア */
-  .photos-area {
-    padding: 16px;
-    background: var(--green-pale);
+  /* Before/After 写真 */
+  .ba-photos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
   }
-  .section-label {
-    font-size: 12px;
-    font-family: var(--font-sans);
-    color: var(--green-dark);
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-  }
-  .photos-grid {
-    display: flex;
-    gap: 10px;
-  }
-  .photo-item {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-  }
-  .photo-box {
-    width: 100%;
-    aspect-ratio: 2/3;
-    border-radius: 10px;
-    overflow: hidden;
-    background: #d6ead5;
+  .ba-photo-wrap {
     position: relative;
+    aspect-ratio: 3/4;
+    overflow: hidden;
   }
-  .photo-box img {
+  .ba-photo-wrap img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
   }
-  .photo-placeholder {
-    width: 100%;
-    height: 100%;
+  .ba-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 8px 8px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.55));
+    color: var(--white);
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.08em;
+  }
+  .ba-divider {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 32px;
+    height: 32px;
+    background: var(--white);
+    border-radius: 50%;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 4px;
-    color: var(--green-dark);
-    opacity: 0.5;
-  }
-  .photo-placeholder span { font-size: 28px; }
-  .photo-placeholder p { font-size: 10px; font-family: var(--font-sans); }
-  .photo-label {
-    font-size: 12px;
-    font-family: var(--font-sans);
-    color: var(--text-light);
+    font-size: 14px;
     font-weight: 700;
+    color: var(--green);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    z-index: 10;
+    pointer-events: none;
+  }
+  .ba-photos-container {
+    position: relative;
   }
 
-  /* 洋服写真 */
+  /* 着用写真 */
   .outfit-section {
-    margin-top: 14px;
-    padding-top: 12px;
-    border-top: 1px dashed var(--green-light);
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--beige);
+  }
+  .section-label {
+    font-size: 11px;
+    color: var(--text-light);
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--beige-dark);
   }
   .outfit-scroll {
     display: flex;
-    gap: 8px;
+    gap: 10px;
     overflow-x: auto;
     scrollbar-width: none;
     padding-bottom: 4px;
   }
   .outfit-scroll::-webkit-scrollbar { display: none; }
-  .outfit-photo {
+  .outfit-img {
     flex-shrink: 0;
-    width: 88px;
-    aspect-ratio: 2/3;
-    border-radius: 8px;
-    overflow: hidden;
-    background: var(--green-light);
+    width: 110px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1.5px solid var(--beige-dark);
   }
-  .outfit-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
   /* 数値 */
-  .stats-area {
-    padding: 16px;
+  .stats-section {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--beige);
   }
   .stats-grid {
     display: grid;
@@ -254,223 +314,196 @@
     gap: 10px;
   }
   .stat-item {
-    background: var(--green-pale);
-    border-radius: 12px;
+    background: var(--cream);
+    border-radius: 14px;
     padding: 12px 14px;
+    border: 1px solid var(--beige-dark);
   }
-  .stat-label {
-    font-size: 13px;
-    font-family: var(--font-sans);
+  .stat-name {
+    font-size: 11px;
     color: var(--text-light);
-    margin-bottom: 6px;
-    font-weight: 500;
+    margin-bottom: 4px;
+    letter-spacing: 0.05em;
   }
-  .stat-row {
+  .stat-values {
     display: flex;
     align-items: baseline;
-    gap: 5px;
+    gap: 4px;
     flex-wrap: wrap;
   }
   .stat-before {
-    font-size: 14px;
-    color: var(--text-light);
+    font-size: 13px;
+    color: var(--text-mid);
     text-decoration: line-through;
-    font-family: var(--font-sans);
+    text-decoration-color: var(--brown-light);
   }
-  .stat-arrow { font-size: 13px; color: var(--green); }
+  .stat-arrow { font-size: 11px; color: var(--text-light); }
   .stat-after {
-    font-size: 20px;
-    font-weight: 900;
-    color: var(--green-dark);
-    font-family: var(--font-sans);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text);
   }
-  .stat-unit { font-size: 13px; color: var(--green-dark); font-family: var(--font-sans); }
   .stat-diff {
     font-size: 12px;
-    color: var(--green);
     font-weight: 700;
-    font-family: var(--font-sans);
-    margin-top: 2px;
+    color: var(--green);
+    background: var(--green-pale);
+    padding: 2px 7px;
+    border-radius: 8px;
   }
 
   /* Q&A */
-  .qa-area { padding: 0 16px 16px; }
-  .qa-toggle {
-    width: 100%;
-    background: none;
-    border: none;
-    border-top: 2px solid var(--green-pale);
-    padding: 14px 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-family: var(--font-serif);
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--green-dark);
-    cursor: pointer;
+  .qa-section {
+    padding: 16px 20px;
   }
-  .qa-toggle .chevron { transition: transform 0.3s; font-size: 14px; }
-  .qa-toggle.open .chevron { transform: rotate(180deg); }
-  .qa-list { display: none; flex-direction: column; gap: 16px; padding-top: 6px; }
-  .qa-list.open { display: flex; }
+  .qa-item {
+    margin-bottom: 14px;
+  }
   .qa-q {
-    background: var(--green-pale);
-    border-left: 4px solid var(--green);
-    padding: 10px 12px;
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 700;
-    color: var(--green-dark);
-    border-radius: 0 8px 8px 0;
-    margin-bottom: 8px;
+    color: var(--green);
+    margin-bottom: 4px;
+    display: flex;
+    gap: 6px;
   }
+  .qa-q::before { content: 'Q.'; font-family: 'Noto Serif JP', serif; }
   .qa-a {
-    font-size: 16px;
-    line-height: 1.85;
+    font-size: 13px;
     color: var(--text);
-    padding: 0 4px;
+    line-height: 1.7;
+    padding-left: 20px;
+    border-left: 2px solid var(--green-light);
   }
 
-  /* 追加ボタン */
-  .add-fab {
-    position: fixed;
-    bottom: 26px;
-    right: 20px;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: var(--green);
-    color: var(--white);
+  /* 声を見るボタン */
+  .toggle-btn {
+    width: 100%;
+    padding: 13px;
+    background: var(--green-pale);
     border: none;
-    font-size: 32px;
+    border-top: 1px solid var(--beige-dark);
+    color: var(--green);
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Noto Sans JP', sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 20px rgba(106,170,103,0.45);
-    cursor: pointer;
-    z-index: 200;
-    transition: transform 0.15s;
-  }
-  .add-fab:active { transform: scale(0.93); }
-
-  /* モーダル */
-  .overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.52);
-    z-index: 300;
-    align-items: flex-end;
-  }
-  .overlay.open { display: flex; }
-  .modal {
-    background: var(--white);
-    border-radius: 22px 22px 0 0;
-    width: 100%;
-    max-height: 92vh;
-    overflow-y: auto;
-    padding: 24px 18px 40px;
-    animation: slideUp 0.28s ease;
-    position: relative;
-  }
-  @keyframes slideUp {
-    from { transform: translateY(100%); }
-    to { transform: translateY(0); }
-  }
-  .modal-title {
-    font-size: 20px;
-    font-weight: 900;
-    color: var(--green-dark);
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  .modal-close {
-    position: absolute;
-    top: 18px;
-    right: 18px;
-    background: none;
-    border: none;
-    font-size: 26px;
-    color: var(--text-light);
-    cursor: pointer;
-    line-height: 1;
-  }
-
-  /* フォーム */
-  .fsec {
-    font-size: 14px;
-    font-weight: 700;
-    font-family: var(--font-sans);
-    color: var(--green-dark);
-    margin: 20px 0 10px;
-    padding-bottom: 6px;
-    border-bottom: 2px solid var(--green-light);
+    gap: 6px;
+    transition: background 0.2s;
     letter-spacing: 0.05em;
   }
-  .fg { margin-bottom: 14px; }
-  .fg label {
-    display: block;
-    font-size: 13px;
-    font-family: var(--font-sans);
-    color: var(--text-light);
-    font-weight: 500;
-    margin-bottom: 5px;
-  }
-  .fg input, .fg select, .fg textarea {
-    width: 100%;
-    padding: 12px 14px;
-    border: 2px solid var(--green-light);
-    border-radius: 10px;
-    font-family: var(--font-serif);
-    font-size: 16px;
-    color: var(--text);
-    background: var(--white);
-    outline: none;
-    -webkit-appearance: none;
-  }
-  .fg input:focus, .fg select:focus, .fg textarea:focus {
-    border-color: var(--green);
-  }
-  .fg textarea { min-height: 88px; resize: vertical; line-height: 1.7; }
-  .frow { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .toggle-btn:hover { background: var(--green-light); color: var(--white); }
+  .toggle-btn .arrow { transition: transform 0.3s; }
+  .toggle-btn.open .arrow { transform: rotate(180deg); }
+  .qa-wrapper { display: none; }
+  .qa-wrapper.open { display: block; }
 
-  /* 写真アップロード */
-  .photo-upload-grid {
-    display: flex;
-    gap: 10px;
-    margin-top: 4px;
+  /* ===== 追加フォーム ===== */
+  .add-section {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    padding: 0 16px;
   }
-  .photo-upload-item {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-  }
-  .photo-upload-box {
+  .add-toggle-btn {
     width: 100%;
-    aspect-ratio: 3/4;
-    border-radius: 10px;
+    padding: 16px;
+    background: var(--white);
     border: 2px dashed var(--green-light);
-    background: var(--green-pale);
+    border-radius: 16px;
+    color: var(--green);
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Noto Sans JP', sans-serif;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
+    gap: 8px;
+    transition: all 0.2s;
+    letter-spacing: 0.05em;
+  }
+  .add-toggle-btn:hover {
+    background: var(--green-pale);
+    border-color: var(--green);
+  }
+
+  .add-form-wrap {
+    display: none;
+    background: var(--white);
+    border-radius: 20px;
+    padding: 24px 20px;
+    margin-top: 12px;
+    border: 1px solid var(--beige-dark);
+    box-shadow: 0 4px 20px var(--shadow);
+  }
+  .add-form-wrap.open { display: block; }
+
+  .form-section-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--green);
+    margin: 20px 0 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .form-section-title:first-child { margin-top: 0; }
+
+  .form-group {
+    margin-bottom: 12px;
+  }
+  .form-group label {
+    display: block;
+    font-size: 12px;
+    color: var(--text-mid);
+    margin-bottom: 4px;
+    font-weight: 500;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1.5px solid var(--beige-dark);
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: 'Noto Sans JP', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    outline: none;
     transition: border-color 0.2s;
   }
-  .photo-upload-box:active { border-color: var(--green); }
-  .photo-upload-box img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--green);
+    background: var(--white);
   }
-  .photo-upload-box input[type="file"] {
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .form-group textarea {
+    min-height: 80px;
+    resize: vertical;
+  }
+
+  .photo-upload-area {
+    border: 2px dashed var(--beige-dark);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    background: var(--cream);
+    transition: all 0.2s;
+    position: relative;
+  }
+  .photo-upload-area:hover { border-color: var(--green); background: var(--green-pale); }
+  .photo-upload-area input[type="file"] {
     position: absolute;
     inset: 0;
     opacity: 0;
@@ -479,91 +512,50 @@
     height: 100%;
     border: none;
     padding: 0;
-    font-size: 0;
   }
-  .upload-icon { font-size: 22px; pointer-events: none; }
-  .upload-hint { font-size: 10px; color: var(--text-light); font-family: var(--font-sans); pointer-events: none; }
-  .photo-upload-label {
-    font-size: 12px;
-    font-family: var(--font-sans);
-    color: var(--text-light);
-    font-weight: 700;
-  }
+  .photo-upload-area p { font-size: 13px; color: var(--text-mid); pointer-events: none; }
+  .photo-upload-area span { font-size: 24px; display: block; margin-bottom: 6px; }
 
-  /* 洋服写真アップロード */
-  .outfit-upload-area {
-    margin-top: 6px;
-  }
-  .outfit-upload-row {
+  .photo-preview-grid {
     display: flex;
     gap: 8px;
     flex-wrap: wrap;
+    margin-top: 10px;
   }
-  .outfit-upload-box {
-    width: 80px;
-    aspect-ratio: 3/4;
-    border-radius: 8px;
-    border: 2px dashed var(--green-light);
-    background: var(--green-pale);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-  }
-  .outfit-upload-box img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
+  .photo-preview-grid img {
+    width: 70px;
+    height: 90px;
     object-fit: cover;
-  }
-  .outfit-upload-box input[type="file"] {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    cursor: pointer;
-    width: 100%;
-    height: 100%;
-    border: none;
-    padding: 0;
-    font-size: 0;
-  }
-  .outfit-add-btn {
-    width: 80px;
-    aspect-ratio: 3/4;
     border-radius: 8px;
-    border: 2px dashed var(--green-light);
-    background: var(--green-pale);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-size: 22px;
-    color: var(--green);
-    flex-shrink: 0;
+    border: 1.5px solid var(--beige-dark);
   }
 
-  /* Q&A入力 */
-  .qa-pair { margin-bottom: 14px; background: var(--green-pale); border-radius: 10px; padding: 12px; }
+  .qa-add-list .qa-entry {
+    margin-bottom: 10px;
+    padding: 12px;
+    background: var(--cream);
+    border-radius: 12px;
+    border: 1px solid var(--beige-dark);
+  }
+  .qa-entry input { margin-bottom: 6px; }
   .qa-add-btn {
-    width: 100%;
-    padding: 11px;
-    background: var(--green-pale);
-    border: 2px dashed var(--green-light);
-    border-radius: 10px;
-    color: var(--green-dark);
-    font-size: 15px;
-    font-family: var(--font-serif);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: 1.5px dashed var(--green-light);
+    color: var(--green);
+    font-size: 13px;
     font-weight: 700;
+    font-family: 'Noto Sans JP', sans-serif;
+    padding: 8px 16px;
+    border-radius: 10px;
     cursor: pointer;
-    margin-top: 4px;
+    transition: all 0.2s;
+    margin-top: 6px;
   }
+  .qa-add-btn:hover { background: var(--green-pale); }
 
-  /* 送信 */
   .submit-btn {
     width: 100%;
     padding: 16px;
@@ -571,561 +563,515 @@
     color: var(--white);
     border: none;
     border-radius: 14px;
-    font-size: 17px;
-    font-weight: 900;
-    font-family: var(--font-serif);
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Noto Sans JP', sans-serif;
     cursor: pointer;
-    margin-top: 22px;
-    letter-spacing: 0.06em;
-    box-shadow: 0 4px 16px rgba(106,170,103,0.35);
+    margin-top: 24px;
+    transition: background 0.2s;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .submit-btn:hover { background: #5a7a60; }
+
+  /* ===== FOOTER ===== */
+  .site-footer {
+    text-align: center;
+    padding: 24px 20px;
+    background: var(--white);
+    border-top: 1px solid var(--beige);
+    color: var(--text-light);
+    font-size: 12px;
   }
 
-  /* 課題オプション表示切替 */
-  .outfit-section-form { display: none; }
-  .outfit-section-form.visible { display: block; }
+  /* ===== Empty state ===== */
+  .empty-state {
+    text-align: center;
+    padding: 48px 24px;
+    color: var(--text-light);
+  }
+  .empty-state p { font-size: 14px; margin-top: 12px; line-height: 1.7; }
+
+  /* ===== Modal（声の詳細） ===== */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 200;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal {
+    background: var(--white);
+    border-radius: 24px 24px 0 0;
+    width: 100%;
+    max-width: 600px;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 24px 20px 40px;
+    animation: slideUp 0.3s ease;
+  }
+  @keyframes slideUp {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+  }
+  .modal-close {
+    float: right;
+    background: var(--beige);
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-mid);
+  }
+  .modal-close:hover { background: var(--beige-dark); }
+
+  @media (min-width: 600px) {
+    .modal-overlay { align-items: center; }
+    .modal { border-radius: 24px; max-height: 90vh; }
+  }
 </style>
 </head>
 <body>
 
+<!-- HEADER -->
 <header class="site-header">
-  <h1>🥬 よしみ｜食べ痩せダイエット</h1>
-  <p>卒業生の声</p>
+  <div class="logo-emoji">🥬</div>
+  <h1>よしみん｜食べ痩せダイエット</h1>
+  <p class="tagline">3食しっかり食べて、体も心も整える</p>
 </header>
 
-<div class="filter-bar">
-  <button class="filter-btn active" onclick="filterCards(&#39;all&#39;,this)">すべて</button>
-  <button class="filter-btn" onclick="filterCards(&#39;3months&#39;,this)">3ヶ月講座</button>
-  <button class="filter-btn" onclick="filterCards(&#39;continued&#39;,this)">継続卒業</button>
-  <button class="filter-btn" onclick="filterCards(&#39;30s-&#39;,this)">30代以下</button>
-  <button class="filter-btn" onclick="filterCards(&#39;40s&#39;,this)">40代</button>
-  <button class="filter-btn" onclick="filterCards(&#39;50s&#39;,this)">50代</button>
-  <button class="filter-btn" onclick="filterCards(&#39;60s+&#39;,this)">60代以上</button>
-</div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">卒業生の実績</div>
+  <h2>食べながら<em>変わった</em>、<br>みんなのリアルな記録</h2>
+  <p class="hero-sub">我慢ゼロ・リバウンドなし<br>3食きちんと食べて叶えた結果です</p>
+  <div class="hero-count">
+    実績掲載中 <strong id="total-count">0</strong> 名
+  </div>
+</section>
 
-<div class="count-bar">
-  <strong id="countNum">1</strong> 名の実績を掲載中
-</div>
-
-<div class="cards-container" id="cardsContainer"><div class="result-card" style="animation-delay: 0s;">
-    <div class="card-header">
-      <div>
-        <div class="profile-name">Yさん</div>
-        <div class="profile-tags">
-          <span class="profile-tag">50代</span>
-          <span class="profile-tag">パート</span>
-          <span class="profile-tag">160cm</span>
-        </div>
-      </div>
-      <span class="course-badge ">3ヶ月講座</span>
-    </div>
-    <div class="photos-area">
-      <div class="section-label">Before / After</div>
-      <div class="photos-grid">
-    <div class="photo-item">
-      <div class="photo-box">
-        <img src="./卒業生の声｜よしみ 食べ痩せダイエット_files/IMG_0591.jpg" alt="ビフォー">
-      </div>
-      <span class="photo-label">ビフォー</span>
-    </div>
-    <div class="photo-item">
-      <div class="photo-box">
-        <img src="./卒業生の声｜よしみ 食べ痩せダイエット_files/IMG_0592.jpg" alt="アフター">
-      </div>
-      <span class="photo-label">アフター</span>
-    </div></div>
-      <div class="outfit-section">
-        <div class="section-label" style="margin-bottom:8px;">👗 似合う洋服</div>
-        <div class="outfit-scroll">
-          <div class="outfit-photo"><img src="./卒業生の声｜よしみ 食べ痩せダイエット_files/9B8DC1C0-E1E4-4ABB-988E-11EDD9AD3DD3.png"></div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="stats-area">
-      <div class="stats-grid">
-        <div class="stat-item">
-            <div class="stat-label">体重</div>
-            <div class="stat-row">
-              <span class="stat-before">70.5kg</span>
-              <span class="stat-arrow">→</span>
-              <span class="stat-after">68.1</span>
-              <span class="stat-unit">kg</span>
-            </div>
-            <div class="stat-diff">-2.4kg</div>
-          </div><div class="stat-item">
-            <div class="stat-label">体脂肪率</div>
-            <div class="stat-row">
-              <span class="stat-before">37.6%</span>
-              <span class="stat-arrow">→</span>
-              <span class="stat-after">36.8</span>
-              <span class="stat-unit">%</span>
-            </div>
-            <div class="stat-diff">-0.8%</div>
-          </div><div class="stat-item">
-            <div class="stat-label">ウエスト</div>
-            <div class="stat-row">
-              <span class="stat-before">88cm</span>
-              <span class="stat-arrow">→</span>
-              <span class="stat-after">85.5</span>
-              <span class="stat-unit">cm</span>
-            </div>
-            <div class="stat-diff">-2.5cm</div>
-          </div><div class="stat-item">
-            <div class="stat-label">アンダー</div>
-            <div class="stat-row">
-              <span class="stat-before">83cm</span>
-              <span class="stat-arrow">→</span>
-              <span class="stat-after">83</span>
-              <span class="stat-unit">cm</span>
-            </div>
-            <div class="stat-diff">0.0cm</div>
-          </div>
-      </div>
-    </div>
-    <div class="qa-area">
-      <button class="qa-toggle" onclick="toggleQA(this)">
-        受講者の声を見る <span class="chevron">▼</span>
-      </button>
-      <div class="qa-list"></div>
-    </div></div></div>
-
-<button class="add-fab" onclick="openModal()">＋</button>
-
-<!-- モーダル -->
-<div class="overlay" id="overlay">
-  <div class="modal" id="modal">
-    <button class="modal-close" onclick="closeModal()">×</button>
-    <div class="modal-title">卒業生を追加する 🥬</div>
-
-    <div class="fsec">📋 プロフィール</div>
-    <div class="fg">
-      <label>表示名（例：Aさん）</label>
-      <input type="text" id="f_name" placeholder="Aさん">
-    </div>
-    <div class="frow">
-      <div class="fg">
-        <label>年代</label>
-        <select id="f_age">
-          <option>30代前半</option><option>30代後半</option>
-          <option>40代前半</option><option>40代後半</option>
-          <option selected="">50代前半</option><option>50代後半</option><option>60代</option>
-        </select>
-      </div>
-      <div class="fg">
-        <label>職業</label>
-        <input type="text" id="f_job" placeholder="主婦・会社員">
-      </div>
-    </div>
-    <div class="frow">
-      <div class="fg">
-        <label>身長(cm)</label>
-        <input type="number" id="f_height" placeholder="158">
-      </div>
-      <div class="fg">
-        <label>コース</label>
-        <select id="f_course" onchange="toggleOutfitSection(this.value)">
-          <option value="1month">1ヶ月サポート</option>
-          <option value="3months">3ヶ月講座</option>
-          <option value="continued">継続卒業</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="fsec">📸 写真</div>
-    <div id="photoUploadArea">
-      <!-- JSで動的に生成 -->
-    </div>
-
-    <!-- 洋服写真（3ヶ月・継続のみ表示） -->
-    <div class="outfit-section-form" id="outfitSectionForm">
-      <div class="fsec">👗 似合う洋服写真（任意）</div>
-      <p style="font-size:13px;color:var(--text-light);font-family:var(--font-sans);margin-bottom:10px;">複数枚追加できます。ない場合は空欄でOKです。</p>
-      <div class="outfit-upload-area">
-        <div class="outfit-upload-row" id="outfitUploadRow">
-          <div class="outfit-add-btn" onclick="addOutfitSlot()">＋</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="fsec">📊 数値（空白でもOK）</div>
-    <div class="frow">
-      <div class="fg"><label>体重 before(kg)</label><input type="number" step="0.1" id="f_wb" placeholder="60.0"></div>
-      <div class="fg"><label>体重 after(kg)</label><input type="number" step="0.1" id="f_wa" placeholder="55.0"></div>
-    </div>
-    <div class="frow">
-      <div class="fg"><label>体脂肪 before(%)</label><input type="number" step="0.1" id="f_bfb" placeholder="36.0"></div>
-      <div class="fg"><label>体脂肪 after(%)</label><input type="number" step="0.1" id="f_bfa" placeholder="31.0"></div>
-    </div>
-    <div class="frow">
-      <div class="fg"><label>ウエスト before</label><input type="number" step="0.1" id="f_w2b" placeholder="85.0"></div>
-      <div class="fg"><label>ウエスト after</label><input type="number" step="0.1" id="f_w2a" placeholder="78.0"></div>
-    </div>
-    <div class="frow">
-      <div class="fg"><label>アンダー before</label><input type="number" step="0.1" id="f_ub" placeholder="76.0"></div>
-      <div class="fg"><label>アンダー after</label><input type="number" step="0.1" id="f_ua" placeholder="71.0"></div>
-    </div>
-
-    <div class="fsec">💬 Q&amp;A（4〜6問）</div>
-    <div id="qaContainer">
-      <div class="qa-pair">
-        <div class="fg"><label>Q1</label><input type="text" placeholder="受ける前のお悩みは？"></div>
-        <div class="fg" style="margin-bottom:0"><label>A1</label><textarea placeholder="回答を入力してください"></textarea></div>
-      </div>
-    </div>
-    <button class="qa-add-btn" onclick="addQAPair()">＋ 質問を追加（最大6問）</button>
-
-    <button class="submit-btn" onclick="submitCard()">追加する</button>
+<!-- FILTER -->
+<div class="filter-section">
+  <p class="filter-label">▾ 絞り込み</p>
+  <div class="filter-scroll">
+    <button class="filter-btn active" data-filter="all">すべて</button>
+    <button class="filter-btn" data-filter="3ヶ月講座">3ヶ月講座</button>
+    <button class="filter-btn" data-filter="継続卒業">継続卒業</button>
+    <button class="filter-btn" data-filter="30代">30代</button>
+    <button class="filter-btn" data-filter="40代">40代</button>
+    <button class="filter-btn" data-filter="50代">50代</button>
+    <button class="filter-btn" data-filter="60代">60代以上</button>
   </div>
 </div>
 
-<script>
-// =================== 設定 ===================
-const GAS_URL = 'https://script.google.com/macros/s/AKfycbziLBebr9bhQFHV8Z874Iy5ERdeDglTC8Ma-a-OfiuZwOk2k5PuDp8UrFu3ySKtH8gcIg/exec';
+<!-- CARDS -->
+<section class="cards-section" id="cards-container">
+  <div class="empty-state" id="empty-state" style="display:none;">
+    <span style="font-size:40px">🌱</span>
+    <p>このカテゴリの実績は<br>まだありません</p>
+  </div>
+</section>
 
-let data = [];
+<!-- ADD SECTION -->
+<div class="add-section">
+  <button class="add-toggle-btn" id="add-toggle-btn" onclick="toggleAddForm()">
+    ＋ 卒業生を追加する 🥬
+  </button>
+  <div class="add-form-wrap" id="add-form-wrap">
+    <div class="form-section-title">📋 プロフィール</div>
+    <div class="form-group">
+      <label>表示名（例：Aさん）</label>
+      <input type="text" id="f-name" placeholder="Aさん">
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>年代</label>
+        <select id="f-age">
+          <option value="">選択</option>
+          <option>30代前半</option>
+          <option>30代後半</option>
+          <option>40代前半</option>
+          <option>40代後半</option>
+          <option>50代前半</option>
+          <option>50代後半</option>
+          <option>60代</option>
+          <option>70代以上</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>職業</label>
+        <input type="text" id="f-job" placeholder="主婦・会社員など">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>身長(cm)</label>
+        <input type="number" id="f-height" placeholder="158">
+      </div>
+      <div class="form-group">
+        <label>コース</label>
+        <select id="f-course">
+          <option value="">選択</option>
+          <option>1ヶ月サポート</option>
+          <option>3ヶ月講座</option>
+          <option>継続卒業</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-section-title">📸 ビフォーアフター写真</div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>ビフォー写真</label>
+        <div class="photo-upload-area">
+          <input type="file" id="f-photo-before" accept="image/*" onchange="previewPhoto(this,'prev-before')">
+          <span>📷</span>
+          <p>タップして選択</p>
+        </div>
+        <div class="photo-preview-grid" id="prev-before"></div>
+      </div>
+      <div class="form-group">
+        <label>アフター写真</label>
+        <div class="photo-upload-area">
+          <input type="file" id="f-photo-after" accept="image/*" onchange="previewPhoto(this,'prev-after')">
+          <span>✨</span>
+          <p>タップして選択</p>
+        </div>
+        <div class="photo-preview-grid" id="prev-after"></div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>👗 似合う洋服写真（複数枚OK・任意）</label>
+      <div class="photo-upload-area">
+        <input type="file" id="f-outfits" accept="image/*" multiple onchange="previewMultiple(this,'prev-outfits')">
+        <span>👗</span>
+        <p>複数枚選択できます</p>
+      </div>
+      <div class="photo-preview-grid" id="prev-outfits"></div>
+    </div>
+
+    <div class="form-section-title">📊 数値（空白でもOK）</div>
+    <div class="form-row">
+      <div class="form-group"><label>体重 before (kg)</label><input type="number" step="0.1" id="f-w-b" placeholder="70.5"></div>
+      <div class="form-group"><label>体重 after (kg)</label><input type="number" step="0.1" id="f-w-a" placeholder="68.1"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label>体脂肪 before (%)</label><input type="number" step="0.1" id="f-bf-b" placeholder="37.6"></div>
+      <div class="form-group"><label>体脂肪 after (%)</label><input type="number" step="0.1" id="f-bf-a" placeholder="36.8"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label>ウエスト before (cm)</label><input type="number" step="0.1" id="f-w-wb" placeholder="88"></div>
+      <div class="form-group"><label>ウエスト after (cm)</label><input type="number" step="0.1" id="f-w-wa" placeholder="85.5"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label>アンダー before (cm)</label><input type="number" step="0.1" id="f-ub" placeholder="83"></div>
+      <div class="form-group"><label>アンダー after (cm)</label><input type="number" step="0.1" id="f-ua" placeholder="83"></div>
+    </div>
+
+    <div class="form-section-title">💬 受講者の声（Q&A）</div>
+    <div class="qa-add-list" id="qa-add-list">
+      <div class="qa-entry">
+        <input type="text" placeholder="Q. 受講前に不安だったことは？" class="qa-q-input">
+        <input type="text" placeholder="A. 答えを入力..." class="qa-a-input">
+      </div>
+    </div>
+    <button class="qa-add-btn" onclick="addQA()" id="qa-add-more">＋ 質問を追加（最大6問）</button>
+
+    <button class="submit-btn" onclick="submitCard()">🥬 追加する</button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <p>よしみん｜食べ痩せダイエット</p>
+  <p style="margin-top:4px;">3食しっかり食べて、一生リバウンドしない体へ</p>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
+  <div class="modal" id="modal-content"></div>
+</div>
+
+<script>
+// ===== データ =====
+let results = [
+  {
+    id: 1,
+    name: 'Yさん',
+    age: '50代',
+    job: 'パート',
+    height: '160cm',
+    course: '3ヶ月講座',
+    photoBefore: 'https://y0443t-gif.github.io/yoshimin-results-/卒業生の声｜よしみ 食べ痩せダイエット_files/IMG_0591.jpg',
+    photoAfter: 'https://y0443t-gif.github.io/yoshimin-results-/卒業生の声｜よしみ 食べ痩せダイエット_files/IMG_0592.jpg',
+    outfits: ['https://y0443t-gif.github.io/yoshimin-results-/卒業生の声｜よしみ 食べ痩せダイエット_files/9B8DC1C0-E1E4-4ABB-988E-11EDD9AD3DD3.png'],
+    stats: {
+      weight: { before: 70.5, after: 68.1 },
+      bodyFat: { before: 37.6, after: 36.8 },
+      waist: { before: 88, after: 85.5 },
+      under: { before: 83, after: 83 }
+    },
+    qa: []
+  }
+];
+
+// ===== フィルター =====
 let currentFilter = 'all';
 
-// =================== GoogleドライブURL変換 ===================
-function toDriveImg(url) {
-  if (!url) return null;
-  const match = url.match(/\/d\/([a-zA-Z0-9_-]+)/);
-  if (match) return `https://drive.google.com/thumbnail?id=${match[1]}&sz=w600`;
-  return url;
-}
-async function loadData() {
-  const con = document.getElementById('cardsContainer');
-  con.innerHTML = '<div style="text-align:center;padding:40px;color:var(--text-light);font-size:16px;">読み込み中...🥬</div>';
-  try {
-    const res = await fetch(GAS_URL);
-    const rows = await res.json();
-    data = rows.map((row, i) => {
-      // Q&A最大6問
-      const qa = [];
-      for(let n=1; n<=6; n++){
-        const q = row[`Q${n}`], a = row[`A${n}`];
-        if(q && a) qa.push({q, a});
-      }
-      // 洋服写真（カンマ区切りで複数URL）
-      const outfitRaw = row['洋服写真'] || '';
-      const outfits = outfitRaw ? outfitRaw.split(',').map(s=>toDriveImg(s.trim())).filter(Boolean) : [];
-      const course = row['コース'] || '3months';
-      return {
-        id: i+1,
-        name: row['名前'] || '—',
-        age: row['年代'] || '—',
-        job: row['職業'] || '—',
-        height: row['身長'] || '—',
-        course,
-        continued: course === 'continued',
-        stats: {
-          weight:  { b: parseFloat(row['体重before'])||null,  a: parseFloat(row['体重after'])||null },
-          bodyfat: { b: parseFloat(row['体脂肪before'])||null, a: parseFloat(row['体脂肪after'])||null },
-          waist:   { b: parseFloat(row['ウエストbefore'])||null, a: parseFloat(row['ウエストafter'])||null },
-          under:   { b: parseFloat(row['アンダーbefore'])||null, a: parseFloat(row['アンダーafter'])||null },
-        },
-        photos: {
-          before:    toDriveImg(row['写真before'] || null),
-          after:     toDriveImg(row['写真after'] || null),
-          afterCont: toDriveImg(row['写真after継続'] || null),
-        },
-        outfits,
-        qa
-      };
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentFilter = btn.dataset.filter;
+    renderCards();
+  });
+});
+
+// ===== レンダリング =====
+function renderCards() {
+  const container = document.getElementById('cards-container');
+  const emptyState = document.getElementById('empty-state');
+  
+  let filtered = results.filter(r => {
+    if (currentFilter === 'all') return true;
+    if (r.course === currentFilter) return true;
+    if (r.age && r.age.startsWith(currentFilter.replace('代',''))) return true;
+    if (r.age === currentFilter) return true;
+    return false;
+  });
+
+  // 既存カードを削除
+  container.querySelectorAll('.result-card').forEach(c => c.remove());
+  
+  if (filtered.length === 0) {
+    emptyState.style.display = 'block';
+  } else {
+    emptyState.style.display = 'none';
+    filtered.forEach(r => {
+      container.insertBefore(createCard(r), emptyState);
     });
-    renderCards(currentFilter);
-  } catch(e) {
-    con.innerHTML = '<div style="text-align:center;padding:40px;color:#c00;font-size:15px;">データの読み込みに失敗しました。<br>しばらくしてから再読み込みしてください。</div>';
   }
+
+  document.getElementById('total-count').textContent = results.length;
 }
 
-// =================== カード描画 ===================
-function renderCards(filter='all') {
-  const con = document.getElementById('cardsContainer');
-  con.innerHTML = '';
-  const filtered = data.filter(d => {
-    if(filter==='all') return true;
-    if(filter==='3months') return d.course==='3months';
-    if(filter==='continued') return d.continued;
-    if(filter==='30s-') return d.age.includes('20代')||d.age.includes('30代');
-    if(filter==='40s') return d.age.includes('40代');
-    if(filter==='50s') return d.age.includes('50代');
-    if(filter==='60s+') return d.age.includes('60代')||d.age.includes('70代');
-    return true;
-  });
-  document.getElementById('countNum').textContent = data.length;
-  filtered.forEach((d,i) => {
-    const el = document.createElement('div');
-    el.className = 'result-card';
-    el.style.animationDelay = `${i*0.07}s`;
-    el.innerHTML = cardHTML(d);
-    con.appendChild(el);
-  });
-}
+function createCard(r) {
+  const card = document.createElement('div');
+  card.className = 'result-card';
+  card.dataset.id = r.id;
 
-function cardHTML(d) {
-  const courseNames = {
-    '1month':'1ヶ月サポート','3months':'3ヶ月講座','continued':'継続卒業'
-  };
-
-  // 写真ラベル
-  const pLabels = d.continued ? ['ビフォー','講座後','継続卒業時'] : ['ビフォー','アフター'];
-  const pKeys   = d.continued ? ['before','after','afterCont'] : ['before','after'];
-  const photosHTML = pKeys.map((k,i) => `
-    <div class="photo-item">
-      <div class="photo-box">
-        ${d.photos[k]
-          ? `<img src="${d.photos[k]}" alt="${pLabels[i]}">`
-          : `<div class="photo-placeholder"><span>📷</span></div>`}
+  const statsHtml = buildStats(r.stats);
+  const outfitsHtml = r.outfits && r.outfits.length > 0 ? `
+    <div class="outfit-section">
+      <div class="section-label">👗 似合う洋服</div>
+      <div class="outfit-scroll">
+        ${r.outfits.map(src => `<img class="outfit-img" src="${src}" alt="着用写真" onerror="this.style.display='none'">`).join('')}
       </div>
-      <span class="photo-label">${pLabels[i]}</span>
-    </div>`).join('');
+    </div>` : '';
 
-  // 洋服写真
-  const outfitHTML = (d.course==='3months'||d.continued) && d.outfits.length>0
-    ? `<div class="outfit-section">
-        <div class="section-label" style="margin-bottom:8px;">👗 似合う洋服</div>
-        <div class="outfit-scroll">
-          ${d.outfits.map(src=>`<div class="outfit-photo"><img src="${src}"></div>`).join('')}
-        </div>
-      </div>` : '';
-
-  // 数値
-  const statsItems = [
-    {label:'体重', v:d.stats.weight, unit:'kg'},
-    {label:'体脂肪率', v:d.stats.bodyfat, unit:'%'},
-    {label:'ウエスト', v:d.stats.waist, unit:'cm'},
-    {label:'アンダー', v:d.stats.under, unit:'cm'},
-  ].filter(s=>s.v&&s.v.b&&s.v.a);
-
-  const statsHTML = statsItems.length===0 ? '' : `
-    <div class="stats-area">
-      <div class="stats-grid">
-        ${statsItems.map(s=>{
-          const diff = (s.v.a - s.v.b).toFixed(1);
-          const sign = diff>0?'+':'';
-          return `<div class="stat-item">
-            <div class="stat-label">${s.label}</div>
-            <div class="stat-row">
-              <span class="stat-before">${s.v.b}${s.unit}</span>
-              <span class="stat-arrow">→</span>
-              <span class="stat-after">${s.v.a}</span>
-              <span class="stat-unit">${s.unit}</span>
-            </div>
-            <div class="stat-diff">${sign}${diff}${s.unit}</div>
-          </div>`;
-        }).join('')}
+  const qaHtml = r.qa && r.qa.length > 0 ? `
+    <button class="toggle-btn" onclick="toggleQA(this)">
+      受講者の声を見る <span class="arrow">▼</span>
+    </button>
+    <div class="qa-wrapper">
+      <div class="qa-section">
+        ${r.qa.map(q => `
+          <div class="qa-item">
+            <div class="qa-q">${escHtml(q.q)}</div>
+            <div class="qa-a">${escHtml(q.a)}</div>
+          </div>`).join('')}
       </div>
-    </div>`;
+    </div>` : '';
 
-  // Q&A
-  const qaHTML = d.qa.map((q,i)=>`
-    <div>
-      <div class="qa-q">Q${i+1}. ${q.q}</div>
-      <div class="qa-a">${q.a}</div>
-    </div>`).join('');
-
-  return `
+  card.innerHTML = `
     <div class="card-header">
-      <div>
-        <div class="profile-name">${d.name}</div>
-        <div class="profile-tags">
-          <span class="profile-tag">${d.age}</span>
-          <span class="profile-tag">${d.job}</span>
-          <span class="profile-tag">${d.height}cm</span>
+      <div class="card-avatar">🌿</div>
+      <div class="card-meta">
+        <h3>${escHtml(r.name)}</h3>
+        <p>${escHtml(r.age)}${r.job ? ' · ' + escHtml(r.job) : ''}${r.height ? ' · ' + escHtml(r.height) : ''}</p>
+      </div>
+      ${r.course ? `<span class="card-tag">${escHtml(r.course)}</span>` : ''}
+    </div>
+    <div class="ba-photos-container">
+      <div class="ba-photos">
+        <div class="ba-photo-wrap">
+          <img src="${r.photoBefore || ''}" alt="ビフォー" onerror="this.parentElement.style.background='#EDE6D9';this.style.display='none'">
+          <div class="ba-label">Before</div>
+        </div>
+        <div class="ba-photo-wrap">
+          <img src="${r.photoAfter || ''}" alt="アフター" onerror="this.parentElement.style.background='#E8F0E9';this.style.display='none'">
+          <div class="ba-label">After ✨</div>
         </div>
       </div>
-      <span class="course-badge ${d.continued?'continued':''}">${courseNames[d.course]||d.course}</span>
+      <div class="ba-divider">→</div>
     </div>
-    <div class="photos-area">
-      <div class="section-label">Before / After</div>
-      <div class="photos-grid">${photosHTML}</div>
-      ${outfitHTML}
-    </div>
-    ${statsHTML}
-    <div class="qa-area">
-      <button class="qa-toggle" onclick="toggleQA(this)">
-        受講者の声を見る <span class="chevron">▼</span>
-      </button>
-      <div class="qa-list">${qaHTML}</div>
+    ${outfitsHtml}
+    ${statsHtml ? `<div class="stats-section"><div class="section-label">📊 数値の変化</div><div class="stats-grid">${statsHtml}</div></div>` : ''}
+    ${qaHtml}
+  `;
+  return card;
+}
+
+function buildStats(stats) {
+  if (!stats) return '';
+  const items = [
+    { label: '体重', b: stats.weight?.before, a: stats.weight?.after, unit: 'kg' },
+    { label: '体脂肪率', b: stats.bodyFat?.before, a: stats.bodyFat?.after, unit: '%' },
+    { label: 'ウエスト', b: stats.waist?.before, a: stats.waist?.after, unit: 'cm' },
+    { label: 'アンダー', b: stats.under?.before, a: stats.under?.after, unit: 'cm' },
+  ];
+  return items.filter(i => i.b != null && i.a != null).map(i => {
+    const diff = (i.a - i.b).toFixed(1);
+    const sign = diff > 0 ? '+' : '';
+    return `<div class="stat-item">
+      <div class="stat-name">${i.label}</div>
+      <div class="stat-values">
+        <span class="stat-before">${i.b}${i.unit}</span>
+        <span class="stat-arrow">→</span>
+        <span class="stat-after">${i.a}${i.unit}</span>
+      </div>
+      <div style="margin-top:4px"><span class="stat-diff">${sign}${diff}${i.unit}</span></div>
     </div>`;
+  }).join('');
 }
 
 function toggleQA(btn) {
   btn.classList.toggle('open');
-  btn.nextElementSibling.classList.toggle('open');
+  const wrapper = btn.nextElementSibling;
+  wrapper.classList.toggle('open');
+  const arrow = btn.querySelector('.arrow');
+  btn.textContent = '';
+  btn.innerHTML = btn.classList.contains('open')
+    ? '声を閉じる <span class="arrow" style="transform:rotate(180deg);display:inline-block">▼</span>'
+    : '受講者の声を見る <span class="arrow">▼</span>';
 }
 
-function filterCards(f, btn) {
-  currentFilter = f;
-  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  renderCards(f);
+// ===== フォーム =====
+function toggleAddForm() {
+  const wrap = document.getElementById('add-form-wrap');
+  wrap.classList.toggle('open');
 }
 
-// =================== モーダル ===================
-function openModal() {
-  document.getElementById('overlay').classList.add('open');
-  document.body.style.overflow = 'hidden';
-  buildPhotoUploads('1month');
-}
-function closeModal() {
-  document.getElementById('overlay').classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-// コース変更で写真エリア再構築
-function toggleOutfitSection(course) {
-  buildPhotoUploads(course);
-  const of = document.getElementById('outfitSectionForm');
-  of.classList.toggle('visible', course==='3months'||course==='continued');
-}
-
-// 写真アップロードUI構築
-function buildPhotoUploads(course) {
-  const area = document.getElementById('photoUploadArea');
-  const isCont = course === 'continued';
-  const slots = isCont
-    ? [{key:'before',label:'ビフォー'},{key:'after',label:'講座後'},{key:'afterCont',label:'継続卒業時'}]
-    : [{key:'before',label:'ビフォー'},{key:'after',label:'アフター'}];
-
-  area.innerHTML = `
-    <div class="photo-upload-grid">
-      ${slots.map(s=>`
-        <div class="photo-upload-item">
-          <div class="photo-upload-box" id="box_${s.key}">
-            <span class="upload-icon">📷</span>
-            <span class="upload-hint">タップして選択</span>
-            <input type="file" accept="image/*" capture="environment"
-              onchange="previewPhoto(this,'${s.key}')">
-          </div>
-          <span class="photo-upload-label">${s.label}</span>
-        </div>`).join('')}
-    </div>`;
-}
-
-// 写真プレビュー
-function previewPhoto(input, key) {
-  const file = input.files[0];
-  if(!file) return;
-  const reader = new FileReader();
-  reader.onload = e => {
-    const box = document.getElementById('box_'+key);
-    let img = box.querySelector('img');
-    if(!img){ img=document.createElement('img'); box.appendChild(img); }
-    img.src = e.target.result;
-    box.querySelectorAll('.upload-icon,.upload-hint').forEach(el=>el.style.display='none');
-    window['_photo_'+key] = e.target.result;
-  };
-  reader.readAsDataURL(file);
-}
-
-// 洋服写真スロット追加
-let outfitImages = [];
-function addOutfitSlot() {
-  const row = document.getElementById('outfitUploadRow');
-  const idx = outfitImages.length;
-  outfitImages.push(null);
-  const div = document.createElement('div');
-  div.className = 'outfit-upload-box';
-  div.id = `outfit_${idx}`;
-  div.innerHTML = `
-    <span class="upload-icon" style="font-size:18px;">📷</span>
-    <input type="file" accept="image/*" onchange="previewOutfit(this,${idx})">`;
-  row.insertBefore(div, row.lastElementChild);
-}
-
-function previewOutfit(input, idx) {
-  const file = input.files[0];
-  if(!file) return;
-  const reader = new FileReader();
-  reader.onload = e => {
-    outfitImages[idx] = e.target.result;
-    const box = document.getElementById('outfit_'+idx);
-    let img = box.querySelector('img');
-    if(!img){ img=document.createElement('img'); box.appendChild(img); }
-    img.src = e.target.result;
-    box.querySelector('.upload-icon').style.display='none';
-  };
-  reader.readAsDataURL(file);
-}
-
-// Q&A
 let qaCount = 1;
-function addQAPair() {
-  if(qaCount>=6){alert('Q&Aは最大6問です');return;}
+function addQA() {
+  if (qaCount >= 6) return;
+  const list = document.getElementById('qa-add-list');
+  const entry = document.createElement('div');
+  entry.className = 'qa-entry';
+  entry.innerHTML = `
+    <input type="text" placeholder="Q. 質問を入力..." class="qa-q-input" style="width:100%;margin-bottom:6px;padding:10px 14px;border:1.5px solid var(--beige-dark);border-radius:10px;font-size:14px;font-family:inherit;background:var(--cream);">
+    <input type="text" placeholder="A. 答えを入力..." class="qa-a-input" style="width:100%;padding:10px 14px;border:1.5px solid var(--beige-dark);border-radius:10px;font-size:14px;font-family:inherit;background:var(--cream);">
+  `;
+  list.appendChild(entry);
   qaCount++;
-  const con = document.getElementById('qaContainer');
-  const div = document.createElement('div');
-  div.className = 'qa-pair';
-  div.innerHTML = `
-    <div class="fg"><label>Q${qaCount}</label><input type="text" placeholder="質問を入力"></div>
-    <div class="fg" style="margin-bottom:0"><label>A${qaCount}</label><textarea placeholder="回答を入力"></textarea></div>`;
-  con.appendChild(div);
+  if (qaCount >= 6) document.getElementById('qa-add-more').style.display = 'none';
 }
 
-// 送信
+function previewPhoto(input, previewId) {
+  const preview = document.getElementById(previewId);
+  preview.innerHTML = '';
+  if (input.files[0]) {
+    const img = document.createElement('img');
+    img.src = URL.createObjectURL(input.files[0]);
+    preview.appendChild(img);
+  }
+}
+
+function previewMultiple(input, previewId) {
+  const preview = document.getElementById(previewId);
+  preview.innerHTML = '';
+  Array.from(input.files).forEach(file => {
+    const img = document.createElement('img');
+    img.src = URL.createObjectURL(file);
+    preview.appendChild(img);
+  });
+}
+
 function submitCard() {
-  const name = document.getElementById('f_name').value || '匿名さん';
-  const age  = document.getElementById('f_age').value;
-  const job  = document.getElementById('f_job').value || '—';
-  const h    = parseFloat(document.getElementById('f_height').value)||'—';
-  const course = document.getElementById('f_course').value;
-  const g = id => { const v=parseFloat(document.getElementById(id).value); return isNaN(v)?null:v; };
+  const name = document.getElementById('f-name').value.trim();
+  if (!name) { alert('表示名を入力してください'); return; }
 
-  const isCont = course==='continued';
+  const beforeFile = document.getElementById('f-photo-before').files[0];
+  const afterFile = document.getElementById('f-photo-after').files[0];
+  const outfitFiles = Array.from(document.getElementById('f-outfits').files);
 
-  const card = {
-    id: Date.now(), name, age, job, height:h, course, continued:isCont,
-    stats:{
-      weight:{b:g('f_wb'),a:g('f_wa')},
-      bodyfat:{b:g('f_bfb'),a:g('f_bfa')},
-      waist:{b:g('f_w2b'),a:g('f_w2a')},
-      under:{b:g('f_ub'),a:g('f_ua')}
-    },
-    photos:{
-      before: window._photo_before||null,
-      after: window._photo_after||null,
-      afterCont: window._photo_afterCont||null
-    },
-    outfits: outfitImages.filter(Boolean),
-    qa: []
-  };
-
-  document.querySelectorAll('.qa-pair').forEach(pair=>{
-    const inputs = pair.querySelectorAll('input,textarea');
-    if(inputs[0].value && inputs[1].value)
-      card.qa.push({q:inputs[0].value, a:inputs[1].value});
+  const qa = [];
+  document.querySelectorAll('#qa-add-list .qa-entry').forEach(entry => {
+    const q = entry.querySelector('.qa-q-input').value.trim();
+    const a = entry.querySelector('.qa-a-input').value.trim();
+    if (q && a) qa.push({ q, a });
   });
 
-  data.unshift(card);
-  renderCards('all');
-  document.querySelectorAll('.filter-btn').forEach((b,i)=>b.classList.toggle('active',i===0));
-  closeModal();
-  resetModal();
-  setTimeout(()=>alert(`${name} を追加しました！🥬`),100);
+  const newResult = {
+    id: Date.now(),
+    name,
+    age: document.getElementById('f-age').value,
+    job: document.getElementById('f-job').value.trim(),
+    height: document.getElementById('f-height').value ? document.getElementById('f-height').value + 'cm' : '',
+    course: document.getElementById('f-course').value,
+    photoBefore: beforeFile ? URL.createObjectURL(beforeFile) : '',
+    photoAfter: afterFile ? URL.createObjectURL(afterFile) : '',
+    outfits: outfitFiles.map(f => URL.createObjectURL(f)),
+    stats: buildStatsFromForm(),
+    qa
+  };
+
+  results.unshift(newResult);
+  renderCards();
+
+  // リセット
+  document.getElementById('add-form-wrap').classList.remove('open');
+  // フォームクリア
+  ['f-name','f-job','f-height','f-w-b','f-w-a','f-bf-b','f-bf-a','f-w-wb','f-w-wa','f-ub','f-ua'].forEach(id => document.getElementById(id).value = '');
+  document.getElementById('f-age').value = '';
+  document.getElementById('f-course').value = '';
+  document.getElementById('prev-before').innerHTML = '';
+  document.getElementById('prev-after').innerHTML = '';
+  document.getElementById('prev-outfits').innerHTML = '';
+  document.getElementById('qa-add-list').innerHTML = `<div class="qa-entry"><input type="text" placeholder="Q. 受講前に不安だったことは？" class="qa-q-input" style="width:100%;margin-bottom:6px;padding:10px 14px;border:1.5px solid var(--beige-dark);border-radius:10px;font-size:14px;font-family:inherit;background:var(--cream);"><input type="text" placeholder="A. 答えを入力..." class="qa-a-input" style="width:100%;padding:10px 14px;border:1.5px solid var(--beige-dark);border-radius:10px;font-size:14px;font-family:inherit;background:var(--cream);"></div>`;
+  qaCount = 1;
+  document.getElementById('qa-add-more').style.display = 'flex';
+
+  alert('🥬 追加しました！');
 }
 
-function resetModal() {
-  document.getElementById('f_name').value='';
-  document.getElementById('f_job').value='';
-  document.getElementById('f_height').value='';
-  document.getElementById('f_course').value='1month';
-  document.getElementById('qaContainer').innerHTML=`
-    <div class="qa-pair">
-      <div class="fg"><label>Q1</label><input type="text" placeholder="受ける前のお悩みは？"></div>
-      <div class="fg" style="margin-bottom:0"><label>A1</label><textarea placeholder="回答を入力してください"></textarea></div>
-    </div>`;
-  qaCount=1;
-  outfitImages=[];
-  document.getElementById('outfitUploadRow').innerHTML='<div class="outfit-add-btn" onclick="addOutfitSlot()">＋</div>';
-  document.getElementById('outfitSectionForm').classList.remove('visible');
-  ['before','after','afterCont'].forEach(k=>{ delete window['_photo_'+k]; });
-  buildPhotoUploads('1month');
+function buildStatsFromForm() {
+  const get = id => { const v = document.getElementById(id).value; return v === '' ? null : parseFloat(v); };
+  return {
+    weight: { before: get('f-w-b'), after: get('f-w-a') },
+    bodyFat: { before: get('f-bf-b'), after: get('f-bf-a') },
+    waist: { before: get('f-w-wb'), after: get('f-w-wa') },
+    under: { before: get('f-ub'), after: get('f-ua') }
+  };
 }
 
-// 初期化
-loadData();
+// ===== Modal =====
+function closeModal(e) {
+  if (e.target === document.getElementById('modal-overlay')) {
+    document.getElementById('modal-overlay').classList.remove('open');
+  }
+}
+
+// ===== ユーティリティ =====
+function escHtml(str) {
+  if (!str) return '';
+  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ===== 初期化 =====
+renderCards();
 </script>
-
-
-</body></html>
+</body>
+</html>
